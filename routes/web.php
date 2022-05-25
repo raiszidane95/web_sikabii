@@ -57,7 +57,7 @@ Route::get('/admin/data-kader', function(){
 
 Route::get('/admin/kepengurusan', [DataKepengurusanController::class, 'index']);
 
-Route::get('/admin/kepengurusan/{nama_kepengurusan}', [DataKepengurusanController::class, 'DetailKepengurusan']);
+Route::get('/admin/kepengurusan/{id_kepengurusan}', [DataKepengurusanController::class, 'show']);
 
 Route::get('/admin/departemen', function(){
     return view('admin.data-departemen');

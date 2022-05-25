@@ -3,13 +3,14 @@
 
     <body>
         <div class="container ">
-            <div class="col-lg-10">
-                <h3>Detail Kepengurusan</h3>
-            <div class="col">
-                <p>
-                </p>
-            </div>
+            <div class="col-2-lg-10">
+                <h6>Detail Kepengurusan</h6>
                 <div class="container mt-5 mb-2">
+                    <h2>Kabinet {{ $data->nama_kepengurusan }}</h2>
+                    <p>{{ $data->visi }}</p>
+                    <br>
+                    <strong><p>{{ $data->misi }}</p></strong>
+                    <h3>{{ $data->tahun_kepengurusan }}</h3>
                 </div>
             </div>
             <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"

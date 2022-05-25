@@ -104,9 +104,9 @@
                                 {{-- @foreach ($data as $post) --}}
                                 @foreach ($data as $post)
                                 <tr>
-                                    <td><a href="/admin/kepengurusan/{{ $post->nama_kepengurusan }}">{{ $post->id_kepengurusan }}</a></td>
-                                    <td><a href="/admin/kepengurusan/{{ $post->nama_kepengurusan }}">{{ $post->nama_kepengurusan }}</a></td>
-                                    <td><a href="/admin/kepengurusan/{{ $post->nama_kepengurusan }}">{{ $post->tahun_kepengurusan }}</a></td>
+                                    <td><a href="/admin/kepengurusan/{{ $post->id_kepengurusan }}">{{ $post->id_kepengurusan }}</a></td>
+                                    <td><a href="/admin/kepengurusan/{{ $post->id_kepengurusan }}">{{ $post->nama_kepengurusan }}</a></td>
+                                    <td><a href="/admin/kepengurusan/{{ $post->id_kepengurusan }}">{{ $post->tahun_kepengurusan }}</a></td>
                                     <td>
                                         <button class="btn btn-warning" onClick="show()">Edit</button>
                                         <button class="btn btn-danger" onClick="destroy()">Delete</button>
