@@ -16,6 +16,7 @@
     <link rel="apple-touch-icon" href="apple-icon.png">
     <link rel="shortcut icon" href="favicon.ico">
 
+    <link rel="stylesheet" href="{{ asset('assets/Datepicker.js/dist/css/datepicker.material.css') }}">
     <link rel="stylesheet" href="{{ asset('style/assets/css/normalize.css') }}">
     <link rel="stylesheet" href="{{ asset('style/assets/css/bootstrap.min.css') }}">
     <link rel="stylesheet" href="{{ asset('style/assets/css/font-awesome.min.css') }}">
@@ -202,7 +203,6 @@
     <script src="{{ asset('style/assets/js/plugins.js') }}"></script>
     <script src="{{ asset('style/assets/js/main.js') }}"></script>
 
-
     <script src="{{ asset('style/assets/js/lib/chart-js/Chart.bundle.js') }}"></script>
     <script src="{{ asset('style/assets/js/dashboard.js') }}"></script>
     <script src="{{ asset('style/assets/js/widgets.js') }}"></script>
@@ -210,6 +210,11 @@
     <script src="{{ asset('style/assets/js/lib/vector-map/jquery.vmap.min.js') }}"></script>
     <script src="{{ asset('style/assets/js/lib/vector-map/jquery.vmap.sampledata.js') }}"></script>
     <script src="{{ asset('style/assets/js/lib/vector-map/country/jquery.vmap.world.js') }}"></script>
+    <script src="{{ asset('assets/ckeditor/ckeditor.js') }}"></script>
+    <script src="{{ asset('assets/Datepicker.js/dist/datepicker.js') }}"></script>
+    <script type="text/javascript">
+        var datepicker = new Datepicker('#datepicker')
+    </script>
     <script>
         (function($) {
             "use strict";
@@ -228,7 +233,7 @@
             });
         })(jQuery);
     </script>
-
+    @stack('ckeditor')
 </body>
 
 </html>

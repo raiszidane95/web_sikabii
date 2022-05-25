@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\DataKegiatanController;
+use App\Http\Controllers\DataKepengurusanController;
 use App\Http\Controllers\PostKegiatanController;
 use App\Models\postkegiatan;
 use Illuminate\Support\Facades\Route;
@@ -54,9 +55,9 @@ Route::get('/admin/data-kader', function(){
     return view('admin.data-kader');
 });
 
-Route::get('/admin/kepengurusan', function(){
-    return view('admin.data-kepengurusan');
-});
+Route::get('/admin/kepengurusan', [DataKepengurusanController::class, 'index']);
+
+Route::get('/admin/kepengurusan/{nama_kepengurusan}', [DataKepengurusanController::class, 'DetailKepengurusan']);
 
 Route::get('/admin/departemen', function(){
     return view('admin.data-departemen');

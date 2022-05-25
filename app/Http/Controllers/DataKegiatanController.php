@@ -12,9 +12,10 @@ class DataKegiatanController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function AdminKegiatan()
     {
-
+        $data = DataKegiatanModels::all();
+        return view('admin.data-kegiatan',compact('data'));
     }
 
     public function UserKegiatan()
@@ -23,12 +24,6 @@ class DataKegiatanController extends Controller
         return view('kegiatan')->with([
             'data' => $data
         ]);
-    }
-
-    public function AdminKegiatan()
-    {
-        $data = DataKegiatanModels::all();
-        return view('admin.data-kegiatan',compact('data'));
     }
 
     /**

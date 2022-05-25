@@ -14,11 +14,9 @@ class DataKepengurusanController extends Controller
      * @return \Illuminate\Http\Response
      */
 
-    public function DetailKepengurusan($id)
+    public function DetailKepengurusan()
 
     {
-        $data = DataKepengurusanModels::findOrFail($id);
-        return view('admin.detail-data-kepengurusan', compact('data'));
     }
 
     public function index()
