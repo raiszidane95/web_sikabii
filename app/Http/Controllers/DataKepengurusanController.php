@@ -17,6 +17,7 @@ class DataKepengurusanController extends Controller
     public function DetailKepengurusan()
 
     {
+
     }
 
     public function index()
@@ -52,9 +53,10 @@ class DataKepengurusanController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show($id_kepengurusan)
     {
-        //
+        $data = DataKepengurusanModels::all()->find($id_kepengurusan);
+        return view('admin.detail-data-kepengurusan', compact('data'));
     }
 
     /**
