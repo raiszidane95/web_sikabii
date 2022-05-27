@@ -1,5 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
 
 
 @extends('Layouts.main')
@@ -11,4 +9,3 @@
 @section('content')
     <p class="text-center">Ini adalah content isi untuk website kaderisasi birohmah unila.</p>
 @endsection
-</html>

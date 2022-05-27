@@ -9,7 +9,7 @@
     <title>Web Kaderisasi Birohmah</title>
 
     <!-- Favicon-->
-    <link rel="icon" type="image/x-icon" href="{{ 'favicon.ico' }}" />
+    <link rel="icon" href="{{ asset('assets/Logo-BIROHMAH.png') }}">
 
     <!-- Bootstrap icons-->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css"/>

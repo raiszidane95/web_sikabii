@@ -10,6 +10,5 @@ class DataKegiatanModels extends Model
 {
     protected $guarded = [];
     protected $table = 'kegiatan';
+    protected $pimaryKey = 'id_kegiatan';
 }
-
-

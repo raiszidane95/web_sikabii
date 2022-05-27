@@ -9,6 +9,7 @@ class DataKepengurusanModels extends Model
 {
     protected $guarded = [];
     protected $table = 'kepengurusan';
-    protected  $primaryKey = 'id_kepengurusan';
+    protected $primaryKey = 'id_kepengurusan';
+    public $timestamps = false;
 
 }

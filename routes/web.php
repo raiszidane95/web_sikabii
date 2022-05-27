@@ -49,15 +49,15 @@ Route::get('/admin', function(){
     return view('admin.dashboard');
 });
 
-Route::get('/admin/kegiatan',[DataKegiatanController::class,'AdminKegiatan']);
-
 Route::get('/admin/data-kader', function(){
     return view('admin.data-kader');
 });
-
-Route::get('/admin/kepengurusan', [DataKepengurusanController::class, 'index']);
-
-Route::get('/admin/kepengurusan/{id_kepengurusan}', [DataKepengurusanController::class, 'show']);
+Route::get('/admin/kegiatan',[DataKegiatanController::class,'AdminKegiatan']);
+Route::get('/admin/kepengurusan', [DataKepengurusanController::class, 'index'])->name('data-kepengurusan');
+Route::get('/admin/kepengurusan/{id_kepengurusan}', [DataKepengurusanController::class, 'show'])->name('show');
+Route::get('/admin/kepengurusan/edit/{id_kepengurusan}', [DataKepengurusanController::class, 'Editshow'])->name('Editshow');
+Route::post('/admin/kepengurusan/store', [DataKepengurusanController::class, 'store'])->name('store');
+Route::post('/admin/kepengurusan/update/{id_kepengurusan}', [DataKepengurusanController::class, 'update'])->name('update');
 
 Route::get('/admin/departemen', function(){
     return view('admin.data-departemen');

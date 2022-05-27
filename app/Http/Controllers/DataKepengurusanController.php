@@ -5,6 +5,9 @@ namespace App\Http\Controllers;
 use App\Models\DataKepengurusan;
 use Illuminate\Http\Request;
 use App\Models\DataKepengurusanModels;
+use Illuminate\Support\Facades\Redirect;
+
+use function GuzzleHttp\Promise\all;
 
 class DataKepengurusanController extends Controller
 {
@@ -13,12 +16,6 @@ class DataKepengurusanController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-
-    public function DetailKepengurusan()
-
-    {
-
-    }
 
     public function index()
     {
@@ -44,7 +41,8 @@ class DataKepengurusanController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        DataKepengurusanModels::create($request->all());
+        return redirect()->route('data-kepengurusan');
     }
 
     /**
@@ -59,6 +57,12 @@ class DataKepengurusanController extends Controller
         return view('admin.detail-data-kepengurusan', compact('data'));
     }
 
+    public function Editshow(Request $request, $id_kepengurusan)
+    {
+        $data = DataKepengurusanModels::find($id_kepengurusan);
+        return view('admin.Edit-data-kepengurusan', compact('data'));
+
+    }
     /**
      * Show the form for editing the specified resource.
      *
@@ -77,9 +81,12 @@ class DataKepengurusanController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+
+    public function update(Request $request, $id_kepengurusan)
     {
-        //
+        $data = DataKepengurusanModels::find($id_kepengurusan);
+        $data->update($request->all());
+        return redirect()->route('data-kepengurusan')->with('success', 'Data berhasil diubah');
     }
 
     /**

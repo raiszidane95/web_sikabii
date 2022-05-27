@@ -6,6 +6,11 @@
             <div class="col-lg-10">
                 <h3>Data Kepengurusan</h3>
                 <div class="container mt-5 mb-2">
+                    @if ($message = Session::get('success'))
+                        <div class="alert alert-success" role="alert">
+                            {{ $message }}
+                        </div>
+                    @endif
                     <!-- Button trigger modal -->
                     <button type="button" class="btn btn-primary mb-1" data-toggle="modal" data-target="#largeModal">
                         Tambah Data
@@ -27,15 +32,17 @@
                                     <div class="container">
                                         <div class="card">
                                             <div class="card-body card-block">
-                                                <form action="" method="POST" enctype="multipart/form-data"
-                                                    class="form-horizontal">
+                                                <form action="/admin/kepengurusan/store" method="POST"
+                                                    enctype="multipart/form-data" class="form-horizontal">
+                                                    @csrf
 
                                                     {{-- Nama Kepengurusan --}}
                                                     <div class="row form-group">
                                                         <div class="col col-md-3"><label for="text-input"
                                                                 class=" form-control-label">Nama Kepengurusan</label></div>
                                                         <div class="col-12 col-md-9"><input type="text" id="nama"
-                                                                name="nama" placeholder="Nama" class="form-control">
+                                                                name="nama_kepengurusan" placeholder="Nama"
+                                                                class="form-control">
                                                         </div>
                                                     </div>
 
@@ -43,9 +50,9 @@
                                                     <div class="row form-group">
                                                         <div class="col col-md-3"><label for="email-input"
                                                                 class=" form-control-label">Tahun Kepengurusan</label></div>
-                                                        <div class="col-12 col-md-9"><input type="text" id="tahun"
-                                                                name="tahun" placeholder="Tahun"
-                                                                class="form-control">
+                                                        <div class="col-12 col-md-9"><input type="text"
+                                                                id="tahun_kepengurusan" name="tahun_kepengurusan"
+                                                                placeholder="Tahun" class="form-control">
                                                         </div>
                                                     </div>
 
@@ -72,7 +79,7 @@
                                                         <div class="col col-md-3"><label for="file-input"
                                                                 class=" form-control-label">Logo Kepengurusan</label></div>
                                                         <div class="col-12 col-md-9"><input type="file" id="file-input"
-                                                                name="file-input" class="form-control-file"></div>
+                                                                name="logo" class="form-control-file"></div>
                                                     </div>
                                                     <div class="modal-footer">
                                                         <button type="button" class="btn btn-secondary"
@@ -103,15 +110,26 @@
                                 </tr>
                                 {{-- @foreach ($data as $post) --}}
                                 @foreach ($data as $post)
-                                <tr>
-                                    <td><a href="/admin/kepengurusan/{{ $post->id_kepengurusan }}">{{ $post->id_kepengurusan }}</a></td>
-                                    <td><a href="/admin/kepengurusan/{{ $post->id_kepengurusan }}">{{ $post->nama_kepengurusan }}</a></td>
-                                    <td><a href="/admin/kepengurusan/{{ $post->id_kepengurusan }}">{{ $post->tahun_kepengurusan }}</a></td>
-                                    <td>
-                                        <button class="btn btn-warning" onClick="show()">Edit</button>
-                                        <button class="btn btn-danger" onClick="destroy()">Delete</button>
-                                    </td>
-                                </tr>
+                                    <tr>
+                                        <td><a
+                                                href="/admin/kepengurusan/{{ $post->id_kepengurusan }}">{{ $post->id_kepengurusan }}</a>
+                                        </td>
+                                        <td><a
+                                                href="/admin/kepengurusan/{{ $post->id_kepengurusan }}">{{ $post->nama_kepengurusan }}</a>
+                                        </td>
+                                        <td><a
+                                                href="/admin/kepengurusan/{{ $post->id_kepengurusan }}">{{ $post->tahun_kepengurusan }}</a>
+                                        </td>
+                                        <td>
+                                            <a href="/admin/kepengurusan/edit/{{ $post->id_kepengurusan }}">
+                                                <button type="button" class="btn btn-warning mb-1" data-toggle="modal"
+                                                    data-target="#EditModal">
+                                                    Edit
+                                                </button>
+                                            </a>
+                                            <button class="btn btn-danger" onClick="destroy()">Delete</button>
+                                        </td>
+                                    </tr>
                                 @endforeach
                                 {{-- @endforeach --}}
                             </table>

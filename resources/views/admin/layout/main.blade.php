@@ -10,11 +10,11 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Admin | Admin SikaBii</title>
-    <meta name="description" content="Sufee Admin - HTML5 Admin Template">
+    <meta name="description" content="Admin Web Sikabii Universitas Lampung">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <link rel="apple-touch-icon" href="apple-icon.png">
-    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="shortcut icon" href="{{ asset('assets/Logo-BIROHMAH.png') }}">
 
     <link rel="stylesheet" href="{{ asset('assets/Datepicker.js/dist/css/datepicker.material.css') }}">
     <link rel="stylesheet" href="{{ asset('style/assets/css/normalize.css') }}">
