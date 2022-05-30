@@ -58,6 +58,7 @@ Route::get('/admin/kepengurusan/{id_kepengurusan}', [DataKepengurusanController:
 Route::get('/admin/kepengurusan/edit/{id_kepengurusan}', [DataKepengurusanController::class, 'Editshow'])->name('Editshow');
 Route::post('/admin/kepengurusan/store', [DataKepengurusanController::class, 'store'])->name('store');
 Route::post('/admin/kepengurusan/update/{id_kepengurusan}', [DataKepengurusanController::class, 'update'])->name('update');
+Route::get('/admin/kepengurusan/delete/{id_kepengurusan}', [DataKepengurusanController::class, 'destroy'])->name('destroy');
 
 Route::get('/admin/departemen', function(){
     return view('admin.data-departemen');
