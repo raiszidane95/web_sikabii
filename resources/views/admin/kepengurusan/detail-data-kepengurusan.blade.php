@@ -19,7 +19,7 @@
                         </strong>
                         <h6>Misi</h6>
                         <strong>
-                            <p>{{ $data->misi }}</p>
+                            <p>{!! html_entity_decode($data->misi) !!}</p>
                         </strong>
                     </div>
                 </div>
