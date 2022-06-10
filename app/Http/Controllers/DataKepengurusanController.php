@@ -2,10 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\DataKepengurusan;
 use Illuminate\Http\Request;
 use App\Models\DataKepengurusanModels;
-use Illuminate\Support\Facades\Redirect;
+use Illuminate\Support\Facades\Storage;
 
 use function GuzzleHttp\Promise\all;
 
@@ -21,7 +20,12 @@ class DataKepengurusanController extends Controller
 
     public function store(Request $request)
     {
-        DataKepengurusanModels::create($request->all());
+        $data = DataKepengurusanModels::create($request->all());
+        if($request->hasFile('logo')){
+            $request->file('logo')->move('logokabinet/', $request->file('logo')->getClientOriginalName());
+            $data->logo = $request->file('logo')->getClientOriginalName();
+            $data->save();
+        }
         return redirect()->route('data-kepengurusan')->with('success', 'Data berhasil ditambahkan');
     }
 
@@ -41,6 +45,14 @@ class DataKepengurusanController extends Controller
     {
         $data = DataKepengurusanModels::find($id_kepengurusan);
         $data->update($request->all());
+        if($request->hasFile('logo')){
+            if ($request->oldImage) {
+                Storage::delete($request->oldImage);
+            }
+            $request->file('logo')->move('logokabinet/', $request->file('logo')->getClientOriginalName());
+            $data->logo = $request->file('logo')->getClientOriginalName();
+            $data->save();
+        }
         return redirect()->route('data-kepengurusan')->with('success', 'Data berhasil diubah');
     }
 

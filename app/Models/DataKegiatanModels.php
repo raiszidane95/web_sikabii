@@ -5,10 +5,10 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-
 class DataKegiatanModels extends Model
 {
     protected $guarded = [];
     protected $table = 'kegiatan';
-    protected $pimaryKey = 'id_kegiatan';
+    protected $primaryKey = 'id_kegiatan';
+    public $timestamps = false;
 }

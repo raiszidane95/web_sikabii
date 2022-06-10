@@ -12,4 +12,10 @@ class DataKepengurusanModels extends Model
     protected $primaryKey = 'id_kepengurusan';
     public $timestamps = false;
 
+    public function departemen()
+    {
+        return $this->hasMany(Departemen::class, 'id_kepengurusan','id_kepengurusan');
+    }
 }
+
+

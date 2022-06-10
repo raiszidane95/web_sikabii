@@ -64,6 +64,12 @@
                                                         class=" form-control-label">Logo
                                                         Kepengurusan</label></div>
                                                 <div class="col-12 col-md-9">
+                                                    @if ($data->logo)
+                                                        <img src="{{ asset('logokabinet/' . $data->logo) }}"
+                                                            class="rounded float-left" width="50" height="50" alt="">
+                                                    @else
+                                                        <img class="rounded float-left" width="50" height="50" alt="">
+                                                    @endif
                                                     <input type="file" id="file-input" name="logo"
                                                         class="form-control-file">
                                                 </div>

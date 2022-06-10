@@ -1,5 +1,5 @@
 @extends('Layouts.main')
 @section('content')
-<h2>{{ $post["tittle"] }}</h2>
-<p>{{ $post["body"] }}</p>
+<h2>{{ $data->nama_kegiatan }}</h2>
+<p>{{ $data->tanggal }}</p>
 @endsection

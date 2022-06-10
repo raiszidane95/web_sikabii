@@ -6,11 +6,6 @@
             <div class="col-lg-10">
                 <h3>Data Kepengurusan</h3>
                 <div class="container mt-5 mb-2">
-                    @if ($message = Session::get('success'))
-                        <div class="alert alert-success" role="alert">
-                            {{ $message }}
-                        </div>
-                    @endif
                     <!-- Button trigger modal -->
                     <button type="button" class="btn btn-primary mb-1" data-toggle="modal" data-target="#largeModal">
                         Tambah Data
@@ -99,29 +94,31 @@
                     <div class="card">
                         <div class="card-header">
                             <strong class="card-title">Data Kepengurusan Kaderisasi Birohmah</strong>
+
                         </div>
                         <div class="card-body">
                             <table class="table">
                                 <tr>
                                     <th>No</th>
                                     <th>Nama Kepengurusan</th>
-                                    <th>Tahun Kepengurusan</th>
+                                    <th>Tahun</th>
                                     <th>Action</th>
                                 </tr>
-                                {{-- @foreach ($data as $post) --}}
+
                                 @php
-                                    $id=1;
+                                    $id = 1;
                                 @endphp
                                 @foreach ($data as $post)
                                     <tr>
                                         <td><a
                                                 href="/admin/kepengurusan/{{ $post->id_kepengurusan }}">{{ $id++ }}</a>
                                         </td>
-                                        <td><a
-                                                href="/admin/kepengurusan/{{ $post->id_kepengurusan }}">{{ $post->nama_kepengurusan }}</a>
+                                        <td><a href="/admin/kepengurusan/{{ $post->id_kepengurusan }}">{{ $post->nama_kepengurusan }}
+                                            </a>
                                         </td>
-                                        <td><a
-                                                href="/admin/kepengurusan/{{ $post->id_kepengurusan }}">{{ $post->tahun_kepengurusan }}</a>
+                                        <td>
+                                                <a
+                                                    href="/admin/kepengurusan/{{ $post->id_kepengurusan }}">{{ $post->tahun_kepengurusan }}</a>
                                         </td>
                                         <td>
                                             <a href="/admin/kepengurusan/edit/{{ $post->id_kepengurusan }}">
@@ -130,9 +127,15 @@
                                                     Edit
                                                 </button>
                                             </a>
-                                            <a href="/admin/kepengurusan/delete/{{ $post->id_kepengurusan }}">
-                                                <button class="btn btn-danger">Delete</button>
-                                        </td></a>
+                                            <a href="#" class="delete"
+                                                data-nama="{{ $post->nama_kepengurusan }}"
+                                                data-id="{{ $post->id_kepengurusan }}">
+                                                <button type="button" class="btn btn-danger mb-1" data-toggle="modal"
+                                                    data-target="#EditModal">
+                                                    Delete
+                                                </button>
+                                            </a>
+                                        </td>
                                     </tr>
                                 @endforeach
                                 {{-- @endforeach --}}
@@ -141,13 +144,42 @@
                     </div>
                 </div>
             </div>
-            @push('ckeditor')
-            <script>
-                CKEDITOR.replace('misi');
-            </script>
-        @endpush
-            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
-                        integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous">
-            </script>
     </body>
+    <script>
+        $('.delete').click(function() {
+            var id_kepengurusan = $(this).attr('data-id');
+            var nama_kepengurusan = $(this).attr('data-nama');
+            swal({
+                    title: "Apakah anda yakin?",
+                    text: "Menghapus data " + nama_kepengurusan + " tidak dapat dikembalikan selelahnya!",
+                    icon: "warning",
+                    buttons: true,
+                    dangerMode: true,
+                })
+                .then((willDelete) => {
+                    if (willDelete) {
+                        window.location = "/admin/kepengurusan/delete/" + id_kepengurusan + ""
+                        swal("Data berhasil dihapus!", {
+                            icon: "success",
+                        });
+                    } else {
+                        swal("Data batal dihapus!");
+                    }
+                });
+        });
+    </script>
+    @if (Session::has('success'))
+        <script>
+            toastr.success("{{ Session::get('success') }}")
+        </script>
+    @endif
+
+    @push('ckeditor')
+        <script>
+            CKEDITOR.replace('misi');
+        </script>
+    @endpush
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous">
+    </script>
 @endsection

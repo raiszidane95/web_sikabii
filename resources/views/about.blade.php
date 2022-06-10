@@ -1,5 +1,4 @@
 @extends('Layouts.main')
-
 @section('header')
     <div class="container px-4">
         <h1>Kaderisasi Birohmah Universitas Lampung</h1>
