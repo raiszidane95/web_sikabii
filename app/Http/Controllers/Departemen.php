@@ -12,19 +12,16 @@ class Departemen extends Controller
     {
         $datakepengurusan = DataKepengurusanModels::all();
         $datadepartemen = ModelsDepartemen::all();
-        return view('admin.data-departemen', compact('datakepengurusan','datadepartemen'));
+        return view('admin.departemen.data-departemen', compact('datakepengurusan','datadepartemen'));
     }
 
     public function show($id_departemen)
     {
         $data = ModelsDepartemen::all()->find($id_departemen);
-        return view('admin.data-departemen', compact('data'));
+        $datakepengurusan = DataKepengurusanModels::all();
+        return view('admin.departemen.Edit-data-departemen', compact('data', 'datakepengurusan'));
     }
 
-    public function create()
-    {
-
-    }
 
     public function store(Request $request)
     {
@@ -32,31 +29,18 @@ class Departemen extends Controller
         return redirect()->route('data-departemen')->with('success', 'Data berhasil ditambahkan');
     }
 
-    public function edit($id)
+    public function update(Request $request, $id_departemen)
     {
-        //
+        $data= ModelsDepartemen::find($id_departemen);
+        $data->update($request->all());
+        return redirect()->route('data-departemen')->with('success', 'Data berhasil diubah');
+
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
+    public function destroy($id_departemen)
     {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        //
+        $data = ModelsDepartemen::find($id_departemen);
+        $data->delete();
+        return redirect()->route('data-departemen')->with('success', 'Data berhasil dihapus');
     }
 }

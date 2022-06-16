@@ -12,11 +12,14 @@
     <link rel="icon" href="{{ asset('assets/Logo-BIROHMAH.png') }}">
 
     <!-- Bootstrap icons-->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
 
     <!-- Core theme CSS (includes Bootstrap)-->
-    <link rel="stylesheet" href="{{ asset('css/styles.css') }}"  />
+    <link rel="stylesheet" href="{{ asset('css/styles.css') }}" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.5.0/css/bootstrap-datepicker.css"
+        rel="stylesheet">
+    <link rel="stylesheet" href="{{ asset('assets/Datepicker.js/dist/css/datepicker.material.css') }}">
 </head>
 
 <body>
@@ -37,8 +40,26 @@
                     <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
                     <li class="nav-item"><a class="nav-link" href="/kegiatan">Kegiatan</a></li>
                     <li class="nav-item"><a class="nav-link" href="/about">About</a></li>
-                    <li class="nav-item"><a class="nav-link" href="/profile">Profile</a></li>
-                    <li class="nav-item"><a class="nav-link" href="/login">Login</a></li>
+                    @auth
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button"
+                                aria-expanded="false">Halo!, {{ Str::limit(auth()->user()->nama, 5) }}</a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="/profile"><i class="bi bi-person "></i>
+                                        Profile</a></li>
+                                <li>
+                                    <form action="/logout" method="POST">
+                                        @csrf
+                                        <button type="submit" class="dropdown-item">
+                                            <i class="bi bi bi-box-arrow-right"></i> Logout</button>
+                                    </form>
+
+                                </li>
+                        </li>
+                    @else
+                        <li class="nav-item"><a class="nav-link" href="/login">Login</a></li>
+
+                    @endauth
                 </ul>
             </div>
         </div>
@@ -111,11 +132,20 @@
         </div>
     </footer>
 </body>
-    <!-- Bootstrap core JS-->
+
+<script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+<!-- Bootstrap core JS-->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
 <!-- Core theme JS-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.5.0/js/bootstrap-datepicker.js"></script>
 <script src="{{ asset('js/scripts.js') }}"></script>
 <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
+<script src="{{ asset('assets/Datepicker.js/dist/datepicker.js') }}"></script>
+<script type="text/javascript">
+    $('.datepicker').datepicker({
+        format: 'yyyy-mm-dd'
+    });
+</script>
 
 </html>

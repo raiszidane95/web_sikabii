@@ -1,6 +1,6 @@
 
-<section class="py-2">
-    <div class="container px-5 my-5">
+<section>
+    <div class="container bg-light px-5">
         <div class="row gx-5 justify-content-center">
             <div class="col-lg-8 col-xl-6">
                 <div class="text-center">

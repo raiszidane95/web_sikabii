@@ -14,6 +14,13 @@ class DataKegiatanController extends Controller
         return view('kegiatan', compact('data'));
     }
 
+    public function kegiatan()
+    {
+        $data = DataKegiatanModels::all();
+        return view('home', compact('data'));
+    }
+
+
     public function Usershow($id_kegiatan)
     {
         $data = DataKegiatanModels::all()->find($id_kegiatan);

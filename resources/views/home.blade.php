@@ -61,8 +61,9 @@
 @endsection
 
 @section('content')
+
     <!--Call to Action-->
-    <div class="container px-5">
+    <div class="container px-5 py-5">
         <div class="row gx-5 align-items-center justify-content-center">
             <div class="col-lg-8 col-xl-7 col-xxl-6">
                 <div class="my-2 text-center ">
@@ -78,5 +79,6 @@
 
     <!-- Kegiatan-->
     <section class="py-5">
+        @include('Partials.card-kegiatan')
     </section>
 @endsection

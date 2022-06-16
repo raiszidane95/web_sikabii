@@ -122,15 +122,28 @@
                         </a>
 
                         <div class="user-menu dropdown-menu">
-                            <a class="nav-link" href="#"><i class="fa fa- user"></i>My Profile</a>
+                            <a class="nav-link" href="/admin"><i class="fa fa- user"></i>Dashboard</a>
 
-                            <a class="nav-link" href="#"><i class="fa fa- user"></i>Notifications <span
-                                    class="count">13</span></a>
+                            <form action="/logout" method="POST">
+                                @csrf
+                                <button type="submit" class="nav-link bg-white border-0">
+                                    <i class="fa fa-power -off"></i>Logout
+                                </button>
 
-                            <a class="nav-link" href="#"><i class="fa fa -cog"></i>Settings</a>
-
-                            <a class="nav-link" href="#"><i class="fa fa-power -off"></i>Logout</a>
+                            </form>
                         </div>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="/profile"><i class="bi bi-box-arrow-right"></i>
+                                    Profile</a></li>
+                            <li>
+                                <form action="/logout" method="POST">
+                                    @csrf
+                                    <button type="submit" class="dropdown-item">
+                                        <i class="bi bi-person"></i> Logout</button>
+                                </form>
+
+                            </li>
+                        </ul>
                     </div>
                 </div>
             </div>

@@ -16,4 +16,9 @@ class Departemen extends Model
     {
         return $this->belongsTo(DataKepengurusanModels::class, 'id_kepengurusan');
     }
+
+    public function anggota()
+    {
+        return $this->hasMany(User::class, 'id_departemen','id_departemen');
+    }
 }

@@ -127,7 +127,7 @@
                                                     Edit
                                                 </button>
                                             </a>
-                                            <a href="#" class="delete"
+                                            <a class="delete"
                                                 data-nama="{{ $post->nama_kepengurusan }}"
                                                 data-id="{{ $post->id_kepengurusan }}">
                                                 <button type="button" class="btn btn-danger mb-1" data-toggle="modal"
@@ -151,7 +151,7 @@
             var nama_kepengurusan = $(this).attr('data-nama');
             swal({
                     title: "Apakah anda yakin?",
-                    text: "Menghapus data " + nama_kepengurusan + " tidak dapat dikembalikan selelahnya!",
+                    text: "Menghapus data " + nama_kepengurusan + " akan menghapus departemen yang ada di kepengurusan tersebut!",
                     icon: "warning",
                     buttons: true,
                     dangerMode: true,
