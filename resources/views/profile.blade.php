@@ -97,7 +97,6 @@
                             </div>
                         </div>
                     </div>
-
                     <div class="row gutters-sm">
                         <div class="col-sm-12 mb-3">
                             <div class="card h-100 shadow">

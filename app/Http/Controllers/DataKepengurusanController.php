@@ -3,10 +3,11 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use function GuzzleHttp\Promise\all;
+use Illuminate\Support\Facades\File;
+
 use App\Models\DataKepengurusanModels;
 use Illuminate\Support\Facades\Storage;
-
-use function GuzzleHttp\Promise\all;
 
 class DataKepengurusanController extends Controller
 {
@@ -46,9 +47,6 @@ class DataKepengurusanController extends Controller
         $data = DataKepengurusanModels::find($id_kepengurusan);
         $data->update($request->all());
         if($request->hasFile('logo')){
-            if ($request->oldImage) {
-                Storage::delete($request->oldImage);
-            }
             $request->file('logo')->move('logokabinet/', $request->file('logo')->getClientOriginalName());
             $data->logo = $request->file('logo')->getClientOriginalName();
             $data->save();

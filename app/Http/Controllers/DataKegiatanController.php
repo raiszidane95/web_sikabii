@@ -17,7 +17,7 @@ class DataKegiatanController extends Controller
 
     public function kegiatan()
     {
-        $data = DataKegiatanModels::all()->sortDesc();
+        $data = DataKegiatanModels::paginate(3)->sortDesc();
         return view('home', compact('data'));
     }
 
@@ -64,7 +64,6 @@ class DataKegiatanController extends Controller
         if ($request->hasFile('gambar')) {
             $request->file('gambar')->move('gambarkegiatanbaru/', $request->file('gambar')->getClientOriginalName());
             $data->gambar = $request->file('gambar')->getClientOriginalName();
-            File::delete(public_path('gambarkegiatanbaru/'.$request->oldgambar));
             $data->save();
         }
         return redirect()->route('data-kegiatan')->with('success', 'Data berhasil diubah');

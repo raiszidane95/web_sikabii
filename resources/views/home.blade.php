@@ -1,4 +1,3 @@
-
 @extends('Layouts.main')
 
 <!-- Header-->
@@ -94,7 +93,6 @@
                     </div>
                 </div>
                 <div class="row mt-10 gx-5">
-
                     @foreach ($data as $post)
                         <div class="col-lg-4 mb-5">
                             <div class="card h-100 shadow border-0">
@@ -111,6 +109,7 @@
                             </div>
                         </div>
                     @endforeach
+
                 </div>
             </div>
         </section>

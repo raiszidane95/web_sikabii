@@ -76,7 +76,6 @@
                                                             alt="">
                                                     @endif
                                                     <input type="file" name="gambar" class="form-control-file">
-                                                    <input type="file" name="oldgambar" value="{{ asset('gambarkegiatanbaru/' . $data->gambar) }}" class="form-control-file">
                                                 </div>
                                             </div>
                                             <div class="modal-footer">
