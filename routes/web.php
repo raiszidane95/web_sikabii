@@ -7,6 +7,7 @@ use App\Http\Controllers\Departemen;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\PostKegiatanController;
 use App\Http\Controllers\RegisterController;
+use App\Http\Controllers\RekamKegiatanController;
 use App\Models\postkegiatan;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Route;
@@ -37,13 +38,14 @@ use Illuminate\Support\Facades\Route;
 
     //kegiatan
     Route::get('/kegiatan', [DataKegiatanController::class, 'Userindex']);
-    Route::get('/kegiatan/{id_kegiatan}', [DataKegiatanController::class, 'Usershow']); //detail kegiatan
 
-//Route User
-Route::group(['middleware' => ['auth', 'hakakses:2']], function () {
+    //Route User
+    Route::group(['middleware' => ['auth', 'hakakses:2']], function () {
+    Route::get('/kegiatan/{id_kegiatan}', [DataKegiatanController::class, 'Usershow']); //detail kegiatan
     Route::get('/profile', [AnggotaController::class, 'index'])->name('profile');
     Route::get('/profile/edit/{id_anggota}', [AnggotaController::class, 'showEdit'])->name('edit');
     Route::post('/profile/edit/update/{id_anggota}', [AnggotaController::class, 'update'])->name('update');
+    Route::post('/kegiatan/daftar/{id_kegiatan}', [RekamKegiatanController::class, 'store']);
 });
 
 // Route Admin

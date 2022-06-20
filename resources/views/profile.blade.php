@@ -20,7 +20,6 @@
                                             class="rounded-circle" width="150" height="150" alt="Admin">
                                     </div>
                                 @else
-
                                     <img src="https://inspektorat.kotawaringinbaratkab.go.id/public/uploads/user/default-user-imge.jpeg"
                                         class=" rounded-circle" width="100" height="100" alt="Admin">
                                 @endif
@@ -104,31 +103,31 @@
                             <div class="card h-100 shadow">
                                 <div class="card-body">
                                     <h6 class="d-flex align-items-center mb-3">Riwayat Kegiatan</h6>
-                                    <small>Web Design</small>
-                                    <div class="progress mb-3" style="height: 5px">
-                                        <div class="progress-bar bg-primary" role="progressbar" style="width: 80%"
-                                            aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
-                                    </div>
-                                    <small>Website Markup</small>
-                                    <div class="progress mb-3" style="height: 5px">
-                                        <div class="progress-bar bg-primary" role="progressbar" style="width: 72%"
-                                            aria-valuenow="72" aria-valuemin="0" aria-valuemax="100"></div>
-                                    </div>
-                                    <small>One Page</small>
-                                    <div class="progress mb-3" style="height: 5px">
-                                        <div class="progress-bar bg-primary" role="progressbar" style="width: 89%"
-                                            aria-valuenow="89" aria-valuemin="0" aria-valuemax="100"></div>
-                                    </div>
-                                    <small>Mobile Template</small>
-                                    <div class="progress mb-3" style="height: 5px">
-                                        <div class="progress-bar bg-primary" role="progressbar" style="width: 55%"
-                                            aria-valuenow="55" aria-valuemin="0" aria-valuemax="100"></div>
-                                    </div>
-                                    <small>Backend API</small>
-                                    <div class="progress mb-3" style="height: 5px">
-                                        <div class="progress-bar bg-primary" role="progressbar" style="width: 66%"
-                                            aria-valuenow="66" aria-valuemin="0" aria-valuemax="100"></div>
-                                    </div>
+                                    <table class="table">
+                                        @if (count(auth()->user()->rekamkegiatan) == 0)
+                                        <p>Belum pernah mengkuti kegiatan</p>
+                                        @else
+                                        <tr>
+                                            <th>Nama Kegiatan</th>
+                                            <th>Status</th>
+                                        </tr>
+                                            @php
+                                                $array = auth()->user()->datakegiatan;
+                                                $object = json_decode(json_encode($array));
+                                            @endphp
+
+                                            @foreach ($object as $item)
+                                                <tr>
+                                                    <td>
+                                                        {{ $item->nama_kegiatan }}
+                                                    </td>
+                                                    <td>
+                                                        {{ $item->status }}
+                                                    </td>
+                                            @endforeach
+                                            </tr>
+                                        @endif
+                                    </table>
                                 </div>
                             </div>
                         </div>

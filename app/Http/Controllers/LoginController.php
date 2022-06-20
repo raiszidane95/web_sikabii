@@ -1,10 +1,11 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use Illuminate\Support\Str;
+use PharIo\Manifest\Author;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-use PharIo\Manifest\Author;
+use App\Http\Controllers\Controller;
 
 class LoginController extends Controller
 {
@@ -17,7 +18,7 @@ class LoginController extends Controller
     }
     public function authenticate(Request $request){
         $credentials = $request->validate([
-            'email' => 'required|email:dns',
+            'email' => 'required|email:dns|',
             'password' => 'required'
     ]);
 

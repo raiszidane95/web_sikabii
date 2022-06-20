@@ -40,8 +40,10 @@
                                             <p><strong>Tertarik untuk mengikuti event ini?</strong></p>
                                             <p>Klik tombol di bawah ini dan silakan untuk mengikuti proses pendaftaran
                                                 sesuai ketentuan yang ada!!</p>
-                                            <form action="#" method="POST">
+                                            <form action="/kegiatan/daftar/{{ $data->id_kegiatan }}" method="POST">
                                                 @csrf
+                                                <input type="hidden" name="id_kegiatan" value="{{$data->id_kegiatan}}" class="form-control-file mt-1">
+                                                <input type="hidden" name="id_anggota" value="{{auth()->user()->id_anggota}}" class="form-control-file mt-1">
                                                 <button type="submit" class="btn btn-primary">Daftar</button>
                                             </form>
                                         </div>

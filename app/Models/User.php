@@ -14,33 +14,29 @@ class User extends Authenticatable
 
     public function departemen()
     {
-        return $this->belongsTo(Departemen::class, 'id_departemen');
+        return $this->belongsTo(Departemen::class, 'id_departemen')->withDefault(['nama_departemen' => 'Data Kosong', 'tahun_kepengurusan' => 'Data Kosong',]);
     }
-    /**
-     * The attributes that are mass assignable.
-     *
-     * @var array<int, string>
-     */
+
+    public function datakegiatan()
+    {
+        return $this->belongsToMany(DataKegiatanModels::class, 'rekam_kegiatan', 'id_anggota','id_kegiatan');
+    }
+
+    public function rekamkegiatan()
+    {
+        return $this->hasMany(RekamKegiatan::class,'id_anggota', 'id_anggota');
+    }
+
     protected $guarded = ['id_anggota'];
     protected $table = 'anggota';
     protected $primaryKey = 'id_anggota';
     public $timestamps = false;
 
-    /**
-     * The attributes that should be hidden for serialization.
-     *
-     * @var array<int, string>
-     */
     protected $hidden = [
         'password',
         'remember_token',
     ];
 
-    /**
-     * The attributes that should be cast.
-     *
-     * @var array<string, string>
-     */
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];

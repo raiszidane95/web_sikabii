@@ -14,7 +14,7 @@ class Departemen extends Model
 
     public function kepengurusan()
     {
-        return $this->belongsTo(DataKepengurusanModels::class, 'id_kepengurusan');
+        return $this->belongsTo(DataKepengurusanModels::class, 'id_kepengurusan')->withDefault(['nama_departemen' => 'Data Kosong']);
     }
 
     public function anggota()

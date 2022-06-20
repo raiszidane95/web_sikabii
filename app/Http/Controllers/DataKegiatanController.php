@@ -2,21 +2,22 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\DataKegiatanModels;
 use Illuminate\Http\Request;
+use App\Models\DataKegiatanModels;
+use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Storage;
 
 class DataKegiatanController extends Controller
 {
     public function Userindex()
     {
-        $data = DataKegiatanModels::all();
+        $data = DataKegiatanModels::all()->sortDesc();
         return view('kegiatan', compact('data'));
     }
 
     public function kegiatan()
     {
-        $data = DataKegiatanModels::all();
+        $data = DataKegiatanModels::all()->sortDesc();
         return view('home', compact('data'));
     }
 
@@ -63,6 +64,7 @@ class DataKegiatanController extends Controller
         if ($request->hasFile('gambar')) {
             $request->file('gambar')->move('gambarkegiatanbaru/', $request->file('gambar')->getClientOriginalName());
             $data->gambar = $request->file('gambar')->getClientOriginalName();
+            File::delete(public_path('gambarkegiatanbaru/'.$request->oldgambar));
             $data->save();
         }
         return redirect()->route('data-kegiatan')->with('success', 'Data berhasil diubah');

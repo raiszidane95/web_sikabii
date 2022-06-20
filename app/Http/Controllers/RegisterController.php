@@ -2,9 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Anggota as ModelsAnggota;
+use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
+use App\Models\Anggota as ModelsAnggota;
 
 class RegisterController extends Controller
 {
@@ -12,7 +13,6 @@ class RegisterController extends Controller
         return view('register');
     }
     public function store(Request $request){
-
         $validatedData = $request->validate([
             'role' => 'required',
             'nama' => 'required|max:255',

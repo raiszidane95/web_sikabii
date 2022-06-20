@@ -12,15 +12,18 @@
                     <div class="card shadow">
                         <div class="card-body">
                             <div class=" py-2 d-flex flex-column align-items-center text-center">
-                                <div class="col-12 col-md-9 d-flex flex-column flex-row">
-                                    @if (auth()->user()->foto)
+                                @if (auth()->user()->foto)
+                                    <div class="overflow-hidden">
                                         <img src="{{ asset('fotoprofile/' . auth()->user()->foto) }}"
-                                            class="rounded-circle" width="150" alt="Admin">
-                                    @else
-                                        <img src="https://inspektorat.kotawaringinbaratkab.go.id/public/uploads/user/default-user-imge.jpeg"
-                                            class="rounded-circle" width="150" alt="Admin">
-                                    @endif
-                                </div>
+                                            class="rounded-circle img-fluid" width="100" alt="Admin">
+                                    </div>
+                                @else
+                                    <div class="overflow-hidden">
+                                        <img src="https://archive.org/download/no-photo-available/no-photo-available.png"
+                                            class="rounded-circle" width="100" height="100" alt="Admin">
+                                    </div>
+                                @endif
+
                                 <div class="mt-3">
                                     <h4>{{ auth()->user()->nama }}</h4>
                                     <p class="text-secondary mb-1">{{ auth()->user()->jurusan }}</p>
@@ -127,8 +130,8 @@
                                         <div class="input-group">
                                             <input name="tempat_lahir" type="text" aria-label="Tempat lahir"
                                                 value="{{ auth()->user()->tempat_lahir }}" class="form-control">
-                                            <input type="text" id="datepicker" name="tanggal_lahir" placeholder="Tanggal"
-                                                value="{{ auth()->user()->tanggal_lahir }}"
+                                            <input type="text" id="datepicker" name="tanggal_lahir"
+                                                placeholder="Tanggal" value="{{ auth()->user()->tanggal_lahir }}"
                                                 class=" datepicker form-control">
                                         </div>
                                     </div>
@@ -158,7 +161,8 @@
                                 <div class="row mb-3">
                                     <div class="col-sm-6">
                                         <h6 class="mb-1">Alamat Asal</h6>
-                                        <textarea class="form-control" name="alamat_asal" placeholder="Alamat lengkap" id="alamat_asal" style="height: 100px">{{ auth()->user()->alamat_asal }}</textarea>
+                                        <textarea class="form-control" name="alamat_asal" placeholder="Alamat lengkap" id="alamat_asal"
+                                            style="height: 100px">{{ auth()->user()->alamat_asal }}</textarea>
                                     </div>
                                     <div class="col-sm-6">
                                         <h6 class="mb-1">Alamat Tinggal</h6>
@@ -168,8 +172,11 @@
                                 </div>
                                 <div class="row mb-3">
                                     <label for="file_input">Foto</label>
-                                    <input type="hidden" id="file-input" name="oldfoto" value="{{auth()->user()->foto}}" class="form-control-file mt-1">
-                                    <input type="file" id="file-input" name="foto" class="form-control-file mt-1">
+                                    <input type="hidden" id="file-input" name="oldfoto"
+                                        value="{{ auth()->user()->foto }}" class="form-control-file mt-1">
+                                    <input type="file" id="file-input" name="foto" class="form-control-file mt-1"
+                                        value="{{ asset('fotoprofile/' . auth()->user()->foto) }}">
+                                    <div id="text-foto" class="form-text">Gunakan dengan rasio 1:1(Square)</div>
                                 </div>
                                 <button type="submit" class="btn btn-primary">Simpan</button>
                             </form>

@@ -43,8 +43,8 @@
                                                 <div class="col col-md-3"><label for="textarea-input"
                                                         class=" form-control-label">Deskripsi</label></div>
                                                 <div class="col-12 col-md-9">
-                                                    <textarea name="deskripsi_kegiatan" id="deskripsi_kegiatan" rows="4" aria-valuetext="" placeholder="Deskripsi kegiatan"
-                                                        class="form-control">{{ $data->deskripsi_kegiatan }}</textarea>
+                                                    <textarea name="deskripsi_kegiatan" id="deskripsi_kegiatan" rows="4" aria-valuetext=""
+                                                        placeholder="Deskripsi kegiatan" class="form-control">{{ $data->deskripsi_kegiatan }}</textarea>
                                                 </div>
                                             </div>
 
@@ -56,36 +56,42 @@
                                                     <select name="status" id="status" class="form-control">
                                                         <option value="Open">Open</option>
                                                         <option value="Closed">Closed</option>
+                                                        <option value="Selesai">Selesai</option>
                                                     </select>
                                                 </div>
                                             </div>
 
-                                    {{-- file input gambar --}}
-                                    <div class="row form-group">
-                                        <div class="col col-md-3"><label for="file-input" class=" form-control-label">Gambar
-                                                Kegiatan</label></div>
-                                        <div class="col-12 col-md-9">
-                                            @if ($data->gambar)
-                                                <img src="{{ asset('gambarkegiatanbaru/' . $data->gambar) }}"
-                                                    class="rounded float-left" width="50" height="50" alt="">
-                                            @else
-                                                <img class="rounded float-left" width="50" height="50" alt="">
-                                            @endif
-                                            <input type="file" id="file-input" name="gambar" class="form-control-file">
-                                        </div>
+                                            {{-- file input gambar --}}
+                                            <div class="row form-group">
+                                                <div class="col col-md-3"><label for="file-input"
+                                                        class=" form-control-label">Gambar
+                                                        Kegiatan</label></div>
+                                                <div class="col-12 col-md-9">
+                                                    @if ($data->gambar)
+                                                        <img src="{{ asset('gambarkegiatanbaru/' . $data->gambar) }}"
+                                                            class="rounded float-left" width="50" height="50"
+                                                            alt="">
+                                                    @else
+                                                        <img class="rounded float-left" width="50" height="50"
+                                                            alt="">
+                                                    @endif
+                                                    <input type="file" name="gambar" class="form-control-file">
+                                                    <input type="file" name="oldgambar" value="{{ asset('gambarkegiatanbaru/' . $data->gambar) }}" class="form-control-file">
+                                                </div>
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-secondary"
+                                                    data-dismiss="modal">Cancel</button>
+                                                <button type="submit" class="btn btn-primary">Confirm</button>
+                                            </div>
+                                        </form>
                                     </div>
-                                    <div class="modal-footer">
-                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-                                        <button type="submit" class="btn btn-primary">Confirm</button>
-                                    </div>
-                                    </form>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
         </div>
     </body>
     @push('ckeditor')
