@@ -14,11 +14,11 @@ class RekamKegiatan extends Model
 
     public function anggota()
     {
-        return $this->belongsTo(User::class,'id_anggota');
+        return $this->hasMany(User::class,'id_anggota', 'id_anggota');
     }
     public function datakegiatan()
     {
-        return $this->belongsToMany(DataKegiatanModels::class,'rekam_kegiatan', 'id_kegiatan' , 'id_rekamkegiatan');
+        return $this->hasMany(DataKegiatanModels::class, 'id_kegiatan' , 'id_kegiatan');
     }
 }
 

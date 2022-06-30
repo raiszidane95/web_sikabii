@@ -22,24 +22,28 @@
                         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                     </div>
                 @endif
-                <form action="/login" method="POST">
-                    @csrf
-                    <div class="mb-2">
-                        <label for="exampleInputEmail1" class="form-label">Email address</label>
-                        <input type="email" name="email" id="password" class="form-control" autofocus required>
-                        <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+                <div class="card h-100 border-0 shadow">
+                    <div class="container m-auto my-3 mt-4">
+                        <form action="/login" method="POST">
+                            @csrf
+                            <div class="mb-2">
+                                <label for="exampleInputEmail1" class="form-label">Email address</label>
+                                <input type="email" name="email" id="password" class="form-control" value="{{ old('email') }}" autofocus required>
+                                <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+                            </div>
+                            <div class="mb-2">
+                                <label for="exampleInputPassword1" class="form-label">Password</label>
+                                <input type="password" name="password" id="password" class="form-control" id="password" required>
+                            </div>
+                            <div class="mb-1">
+                                <p>Belum memiliki akun? <a href="/register">Daftar disini!</a>
+                                </p>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Login</button>
+                        </form>
                     </div>
-                    <div class="mb-2">
-                        <label for="exampleInputPassword1" class="form-label">Password</label>
-                        <input type="password" name="password" id="password" class="form-control" id="password" required>
-                    </div>
-                    <div class="mb-1">
-                        <p>Belum memiliki akun? <a href="/register">Daftar disini!</a>
-                        </p>
-                    </div>
-                    <button type="submit" class="btn btn-primary">Login</button>
+                </div>
             </div>
-            </form>
         </div>
     </div>
     <div class=" container mt-5 me-10 text-end">

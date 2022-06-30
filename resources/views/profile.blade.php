@@ -2,8 +2,6 @@
 
 @section('header')
     <h3 class="text-start ps-3">Profile Kader</h3>
-    {{-- <p>{{ auth()->user()->nama, }}</p>
-    <p>{{ auth()->user()->email, }}</p> --}}
 @endsection
 
 @section('content')
@@ -26,7 +24,7 @@
                                 <div class="mt-3">
                                     <h4>{{ auth()->user()->nama }}</h4>
                                     <p class="text-secondary mb-1">{{ auth()->user()->jurusan }}</p>
-                                    <p class="text-muted font-size-sm">F{{ auth()->user()->fakultas }}
+                                    <p class="text-muted font-size-sm">Fakultas {{ auth()->user()->fakultas }}
                                         {{ auth()->user()->angkatan }}</p>
                                     <a href="/profile/edit/{{ auth()->user()->id_anggota }}">
                                         <button class="btn btn-primary">Edit Profile</button>
@@ -103,7 +101,7 @@
                                 <div class="card-body">
                                     <h6 class="d-flex align-items-center mb-3">Riwayat Kegiatan</h6>
                                     <table class="table">
-                                        @if (count(auth()->user()->rekamkegiatan) == 0)
+                                        @if (auth()->user()->rekamkegiatan == null)
                                         <p>Belum pernah mengkuti kegiatan</p>
                                         @else
                                         <tr>

@@ -7,21 +7,38 @@
                 <h3>Data Kader</h3>
                 <div class="card mt-3">
                     <div class="card-body">
+                        <a href="/admin/data-kader/export" class="btn btn-success">Export</a>
                         <table class="table">
                             <tr>
                                 <th>Nama</th>
                                 <th>Departemen </th>
-                                <th>Action</th>
+                                <th>Kepengurusan</th>
                             </tr>
+                            @foreach ($data as $item)
+                                <tr>
+                                    <td>
+                                        <a href="/admin/data-kader/{{ $item->id_anggota }}">
+                                            {{ $item->nama }}
+                                        </a>
+                                    </td>
+                                    @if ($item->departemen == null)
+                                        <td class="text-secondary">Data Kosong</td>
+                                        <td class="text-secondary">Data Kosong</td>
+                                    @else
+                                        <td>
+                                            <a href="/admin/data-kader/{{ $item->id_anggota }}">
+                                                {{ $item->departemen->nama_departemen }}
+                                            </a>
+                                        </td>
+                                        <td>
+                                            <a href="/admin/data-kader/{{ $item->id_anggota }}">
+                                                {{ $item->departemen->kepengurusan->nama_kepengurusan }}
+                                            </a>
+                                        </td>
+                                    @endif
 
-                            <tr>
-                                <td>Ari Lesmana</td>
-                                <td>Kaderisasi</td>
-                                <td>
-                                    <button class="btn btn-warning" onClick="show()">Edit</button>
-                                    <button class="btn btn-danger" onClick="destroy()">Delete</button>
-                                </td>
-                            </tr>
+                                </tr>
+                            @endforeach
                         </table>
                     </div>
                 </div>

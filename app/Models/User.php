@@ -19,12 +19,12 @@ class User extends Authenticatable
 
     public function datakegiatan()
     {
-        return $this->belongsToMany(DataKegiatanModels::class, 'rekam_kegiatan', 'id_anggota','id_kegiatan');
+        return $this->belongsToMany(DataKegiatanModels::class, 'rekam_kegiatan', 'id_anggota','id_kegiatan')->withPivot('waktu_rekamkegiatan ');
     }
 
     public function rekamkegiatan()
     {
-        return $this->hasMany(RekamKegiatan::class,'id_anggota', 'id_anggota');
+        return $this->belongsTo(RekamKegiatan::class,'id_anggota', 'id_anggota');
     }
 
     protected $guarded = ['id_anggota'];

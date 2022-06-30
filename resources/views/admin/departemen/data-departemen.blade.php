@@ -1,4 +1,4 @@
-@extends('admin.dashboard')
+@extends('admin.layout.main')
 @section('content')
 
     <body>
@@ -38,6 +38,26 @@
                                                                 class=" form-control-label">Nama Departemen</label></div>
                                                         <div class="col-12 col-md-9"><input type="text" id="nama"
                                                                 name="nama_departemen" placeholder="Nama"
+                                                                class="form-control">
+                                                        </div>
+                                                    </div>
+
+                                                    {{-- kepala Departemen --}}
+                                                    <div class="row form-group">
+                                                        <div class="col col-md-3"><label for="text-input"
+                                                                class=" form-control-label">Kepala Departemen</label></div>
+                                                        <div class="col-12 col-md-9"><input type="text" id="nama"
+                                                                name="kepala_departemen" placeholder="Nama"
+                                                                class="form-control">
+                                                        </div>
+                                                    </div>
+
+                                                    {{-- Sekertaris Departemen --}}
+                                                    <div class="row form-group">
+                                                        <div class="col col-md-3"><label for="text-input"
+                                                                class=" form-control-label">Sekertaris Departemen</label></div>
+                                                        <div class="col-12 col-md-9"><input type="text" id="nama"
+                                                                name="sekertaris_departemen" placeholder="Nama"
                                                                 class="form-control">
                                                         </div>
                                                     </div>

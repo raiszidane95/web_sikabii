@@ -18,7 +18,8 @@ class RegisterController extends Controller
             'nama' => 'required|max:255',
             'email' => 'required|email:dns|unique:anggota,email',
             'password' => 'required|min:6',
-            'confirm' => 'required|same:password|min:6'
+            'confirm' => 'required|same:password|min:6',
+            'captcha' => 'required|captcha'
         ]);
         $validatedData['password'] = Hash::make($validatedData['password']);
         ModelsAnggota::create($validatedData);

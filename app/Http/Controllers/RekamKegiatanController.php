@@ -15,4 +15,18 @@ class RekamKegiatanController extends Controller
         RekamKegiatan::create($request->all());
         return redirect('/profile');
     }
+
+    public function RekamKegiatan(){
+        $data = RekamKegiatan::all()->sortByDesc('id_kegiatan');
+        return view('admin.kegiatan.riwayat-kegiatan', compact('data'));
+    }
+
+    public function Show(Request $request, $id_rekamkegiatan){
+
+        $datakegiatan = RekamKegiatan::find($id_rekamkegiatan);
+        $data = $datakegiatan->where('id_rekamkegiatan', '!=', 'null');
+        return view('admin.kegiatan.detail-riwayat-kegiatan', compact('data'));
+
+
+    }
 }

@@ -14,7 +14,7 @@ class DataKepengurusanModels extends Model
 
     public function departemen()
     {
-        return $this->hasMany(Departemen::class, 'id_kepengurusan','id_kepengurusan');
+        return $this->hasMany(Departemen::class, 'id_kepengurusan','id_kepengurusan')->withDefault(['nama_departemen' => 'Data Kosong']);
     }
 }
 

@@ -3,8 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\RekamKegiatan;
 use App\Models\DataKegiatanModels;
 use Illuminate\Support\Facades\File;
+use Maatwebsite\Excel\Facades\Excel;
 use Illuminate\Support\Facades\Storage;
 
 class DataKegiatanController extends Controller
@@ -25,7 +27,7 @@ class DataKegiatanController extends Controller
     public function Usershow($id_kegiatan)
     {
         $data = DataKegiatanModels::all()->find($id_kegiatan);
-        return view('detail-kegiatan', compact('data'));
+        return view('detail-kegiatan', compact('data', 'datarekam'));
     }
 
     public function index()
@@ -48,7 +50,10 @@ class DataKegiatanController extends Controller
     public function show($id_kegiatan)
     {
         $data = DataKegiatanModels::all()->find($id_kegiatan);
-        return view('admin.kegiatan.detail-data-kegiatan', compact('data'));
+        $datarekam = RekamKegiatan::all();
+        $show = $datarekam->where('id_kegiatan', '==', $id_kegiatan);
+        $get = $show->all();
+        return view('admin.kegiatan.detail-data-kegiatan', compact('data', 'get'));
     }
 
     public function Editshow(Request $request, $id_kegiatan)
@@ -74,5 +79,14 @@ class DataKegiatanController extends Controller
         $data = DataKegiatanModels::find($id_kegiatan);
         $data->delete();
         return redirect()->route('data-kegiatan')->with('success', 'Data berhasil dihapus');
+    }
+
+    public function Excel($id_kegiatan)
+    {
+        $data = DataKegiatanModels::all()->find($id_kegiatan);
+        $datarekam = RekamKegiatan::all();
+        $show = $datarekam->where('id_kegiatan', '==', $id_kegiatan);
+        $get = $show->all();
+        return view('admin.kegiatan.detaildata-riwayat-kegiatan', compact('data', 'get'));
     }
 }

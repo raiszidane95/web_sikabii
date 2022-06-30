@@ -1,4 +1,4 @@
-@extends('admin.dashboard')
+@extends('admin.layout.main')
 @section('content')
 
     <body>
@@ -15,6 +15,7 @@
                     <button type="button" class="btn btn-primary mb-1" data-toggle="modal" data-target="#largeModal">
                         Tambah Data
                     </button>
+                    <a href="/admin/kegiatan/riwayat-kegiatan" class="btn btn-secondary mb-1"> Riwayat Kegiatan</a>
 
                     <!-- Modal -->
                     <div class="modal fade" id="largeModal" tabindex="-1" role="dialog" aria-labelledby="largeModalLabel"

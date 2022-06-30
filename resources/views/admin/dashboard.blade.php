@@ -14,211 +14,50 @@
 
         <div class="col-sm-6 col-lg-3">
             <div class="card text-white bg-flat-color-1">
-                <div class="card-body pb-0">
-                    <div class="dropdown float-right">
-                        <button class="btn bg-transparent dropdown-toggle theme-toggle text-light" type="button"
-                            id="dropdownMenuButton" data-toggle="dropdown">
-                            <i class="fa fa-cog"></i>
-                        </button>
-                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                            <div class="dropdown-menu-content">
-                                <a class="dropdown-item" href="#">Action</a>
-                                <a class="dropdown-item" href="#">Another action</a>
-                                <a class="dropdown-item" href="#">Something else here</a>
-                            </div>
-                        </div>
+                <a href="/admin/data-kader">
+                    <div class="card-body pb-0">
+                        <h1 class="mb-0">
+                            <span class="text-light count">{{ $data }}</span>
+                        </h1>
+                        <strong>
+                            <p class="text-light">Jumlah Kader</p>
+                        </strong>
                     </div>
-                    <h4 class="mb-0">
-                        <span class="count">342</span>
-                    </h4>
-                    <p class="text-light">Jumlah Kader</p>
-                </div>
-
+                </a>
             </div>
         </div>
         <!--/.col-->
 
         <div class="col-sm-6 col-lg-3">
             <div class="card text-white bg-flat-color-4">
-                <div class="card-body pb-0">
-                    <div class="dropdown float-right">
-                        <button class="btn bg-transparent dropdown-toggle theme-toggle text-light" type="button"
-                            id="dropdownMenuButton" data-toggle="dropdown">
-                            <i class="fa fa-cog"></i>
-                        </button>
-                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                            <div class="dropdown-menu-content">
-                                <a class="dropdown-item" href="#">Action</a>
-                                <a class="dropdown-item" href="#">Another action</a>
-                                <a class="dropdown-item" href="#">Something else here</a>
-                            </div>
-                        </div>
+                <a href="/admin/kegiatan">
+                    <div class="card-body pb-0">
+                        <h1 class="mb-0">
+                            <span class="text-light count">{{ $datakegiatan }}</span>
+                        </h1>
+                        <strong>
+                            <p class="text-light">Jumlah Kegiatan</p>
+                        </strong>
                     </div>
-                    <h4 class="mb-0">
-                        <span class="count">15</span>
-                    </h4>
-                    <p class="text-light">Jumlah Kegiatan</p>
-
-                </div>
+                </a>
             </div>
         </div>
         <!--/.col-->
 
         <div class="col-sm-6 col-lg-3">
             <div class="card text-white bg-flat-color-3">
-                <div class="card-body pb-0">
-                    <div class="dropdown float-right">
-                        <button class="btn bg-transparent dropdown-toggle theme-toggle text-light" type="button"
-                            id="dropdownMenuButton" data-toggle="dropdown">
-                            <i class="fa fa-cog"></i>
-                        </button>
-                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                            <div class="dropdown-menu-content">
-                                <a class="dropdown-item" href="#">Action</a>
-                                <a class="dropdown-item" href="#">Another action</a>
-                                <a class="dropdown-item" href="#">Something else here</a>
-                            </div>
-                        </div>
+                <a href="/admin/departemen">
+                    <div class="card-body pb-0">
+                        <h1 class="mb-0">
+                            <span class="text-light count">{{ $datadepartemen }}</span>
+                        </h1>
+                        <strong>
+                            <p class="text-light">Departemen</p>
+                        </strong>
                     </div>
-                    <h4 class="mb-0">
-                        <span class="count">252</span>
-                    </h4>
-                    <p class="text-light">Kader Akhwat</p>
-                </div>
+                </a>
             </div>
         </div>
         <!--/.col-->
-
-        <div class="col-xl-6">
-            <div class="card">
-                <div class="card-body">
-                    <div class="row">
-                        <div class="col-sm-4">
-                            <h4 class="card-title mb-0">Traffic</h4>
-                            <div class="small text-muted">October 2017</div>
-                        </div>
-                        <!--/.col-->
-                        <div class="col-sm-8 hidden-sm-down">
-                            <button type="button" class="btn btn-primary float-right bg-flat-color-1"><i
-                                    class="fa fa-cloud-download"></i></button>
-                            <div class="btn-toolbar float-right" role="toolbar" aria-label="Toolbar with button groups">
-                                <div class="btn-group mr-3" data-toggle="buttons" aria-label="First group">
-                                    <label class="btn btn-outline-secondary">
-                                        <input type="radio" name="options" id="option1"> Day
-                                    </label>
-                                    <label class="btn btn-outline-secondary active">
-                                        <input type="radio" name="options" id="option2" checked=""> Month
-                                    </label>
-                                    <label class="btn btn-outline-secondary">
-                                        <input type="radio" name="options" id="option3"> Year
-                                    </label>
-                                </div>
-                            </div>
-                        </div>
-                        <!--/.col-->
-
-
-                    </div>
-                    <!--/.row-->
-                    <div class="chart-wrapper mt-4">
-                        <canvas id="trafficChart" style="height:200px;" height="200"></canvas>
-                    </div>
-
-                </div>
-                <div class="card-footer">
-                    <ul>
-                        <li>
-                            <div class="text-muted">Visits</div>
-                            <strong>29.703 Users (40%)</strong>
-                            <div class="progress progress-xs mt-2" style="height: 5px;">
-                                <div class="progress-bar bg-success" role="progressbar" style="width: 40%;"
-                                    aria-valuenow="40" aria-valuemin="0" aria-valuemax="100"></div>
-                            </div>
-                        </li>
-                        <li class="hidden-sm-down">
-                            <div class="text-muted">Unique</div>
-                            <strong>24.093 Users (20%)</strong>
-                            <div class="progress progress-xs mt-2" style="height: 5px;">
-                                <div class="progress-bar bg-info" role="progressbar" style="width: 20%;" aria-valuenow="20"
-                                    aria-valuemin="0" aria-valuemax="100"></div>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="text-muted">Pageviews</div>
-                            <strong>78.706 Views (60%)</strong>
-                            <div class="progress progress-xs mt-2" style="height: 5px;">
-                                <div class="progress-bar bg-warning" role="progressbar" style="width: 60%;"
-                                    aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
-                            </div>
-                        </li>
-                        <li class="hidden-sm-down">
-                            <div class="text-muted">New Users</div>
-                            <strong>22.123 Users (80%)</strong>
-                            <div class="progress progress-xs mt-2" style="height: 5px;">
-                                <div class="progress-bar bg-danger" role="progressbar" style="width: 80%;"
-                                    aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
-                            </div>
-                        </li>
-                        <li class="hidden-sm-down">
-                            <div class="text-muted">Bounce Rate</div>
-                            <strong>40.15%</strong>
-                            <div class="progress progress-xs mt-2" style="height: 5px;">
-                                <div class="progress-bar" role="progressbar" style="width: 40%;" aria-valuenow="40"
-                                    aria-valuemin="0" aria-valuemax="100"></div>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-
-        <div class="col-xl-3 col-lg-6">
-            <section class="card">
-                <div class="twt-feed blue-bg">
-                    <div class="corner-ribon black-ribon">
-                        <i class="fa fa-twitter"></i>
-                    </div>
-                    <div class="fa fa-twitter wtt-mark"></div>
-
-                    <div class="media">
-                        <a href="#">
-                            <img class="align-self-center rounded-circle mr-3" style="width:85px; height:85px;" alt=""
-                                src="images/admin.jpg">
-                        </a>
-                        <div class="media-body">
-                            <h2 class="text-white display-6">Jim Doe</h2>
-                            <p class="text-light">Project Manager</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="weather-category twt-category">
-                    <ul>
-                        <li class="active">
-                            <h5>750</h5>
-                            Tweets
-                        </li>
-                        <li>
-                            <h5>865</h5>
-                            Following
-                        </li>
-                        <li>
-                            <h5>3645</h5>
-                            Followers
-                        </li>
-                    </ul>
-                </div>
-                <div class="twt-write col-sm-12">
-                    <textarea placeholder="Write your Tweet and Enter" rows="1" class="form-control t-text-area"></textarea>
-                </div>
-                <footer class="twt-footer">
-                    <a href="#"><i class="fa fa-camera"></i></a>
-                    <a href="#"><i class="fa fa-map-marker"></i></a>
-                    New Castle, UK
-                    <span class="pull-right">
-                        32
-                    </span>
-                </footer>
-            </section>
-        </div>
     </div> <!-- .content -->
 @endsection

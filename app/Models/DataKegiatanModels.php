@@ -14,6 +14,10 @@ class DataKegiatanModels extends Model
 
     public function user()
     {
-        return $this->belongsToMany(User::class, 'rekam_kegiatan', 'id_kegiatan','id_anggota');
+        return $this->belongsToMany(User::class, 'rekam_kegiatan', 'id_kegiatan', 'id_anggota')->withPivot('waktu_rekamkegiatan ');
+    }
+    public function rekamkegiatan()
+    {
+        return $this->belongsTo(RekamKegiatan::class, 'id_kegiatan');
     }
 }
