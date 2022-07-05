@@ -26,9 +26,16 @@
                                     <p class="text-secondary mb-1">{{ auth()->user()->jurusan }}</p>
                                     <p class="text-muted font-size-sm">Fakultas {{ auth()->user()->fakultas }}
                                         {{ auth()->user()->angkatan }}</p>
-                                    <a href="/profile/edit/{{ auth()->user()->id_anggota }}">
-                                        <button class="btn btn-primary">Edit Profile</button>
-                                    </a>
+                                    <div class="row">
+                                        <a href="/profile/edit/{{ auth()->user()->id_anggota }}"
+                                            class="btn btn-primary btn-sm my-1">
+                                            Edit Profile
+                                        </a>
+                                        <a href="/profile/password/{{ auth()->user()->id_anggota }}"
+                                            class="btn btn-success btn-sm">
+                                            Edit Password
+                                        </a>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -41,7 +48,7 @@
                             </li>
                             <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
                                 <h6 class="mb-0">Nomor Handphone</h6>
-                                <span class="text-secondary">{{ auth()->user()->no_handphone }}</span>
+                                <span class="text-secondary">0{{ auth()->user()->no_handphone }}</span>
                             </li>
                         </ul>
                     </div>
@@ -102,12 +109,12 @@
                                     <h6 class="d-flex align-items-center mb-3">Riwayat Kegiatan</h6>
                                     <table class="table">
                                         @if (auth()->user()->rekamkegiatan == null)
-                                        <p>Belum pernah mengkuti kegiatan</p>
+                                            <p>Belum pernah mengkuti kegiatan</p>
                                         @else
-                                        <tr>
-                                            <th>Nama Kegiatan</th>
-                                            <th>Status</th>
-                                        </tr>
+                                            <tr>
+                                                <th>Nama Kegiatan</th>
+                                                <th>Status</th>
+                                            </tr>
                                             @php
                                                 $array = auth()->user()->datakegiatan;
                                                 $object = json_decode(json_encode($array));

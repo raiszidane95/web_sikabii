@@ -12,6 +12,7 @@ class RekamKegiatanController extends Controller
         return view('/profile', compact('data'));
     }
     public function store(Request $request){
+
         RekamKegiatan::create($request->all());
         return redirect('/profile');
     }

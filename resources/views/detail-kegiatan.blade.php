@@ -14,7 +14,14 @@
                     <div class="card h-100 shadow border-0 align-self-center">
                         <img class="card-img-top" src="{{ asset('gambarkegiatanbaru/' . $data->gambar) }}" />
                         <div class="card-body p-4">
-                            <div class="badge bg-main-color bg-gradient rounded-pill mb-2">{{ $data->status }}</div>
+                            @if ($data->status == 'Open')
+                                <div class="badge bg-main-color bg-gradient rounded-pill mb-2">{{ $data->status }}</div>
+                            @elseif ($data->status == 'Closed')
+                                <div class="badge bg-warning bg-gradient rounded-pill mb-2">{{ $data->status }}</div>
+                            @else
+                                <div class="badge bg-success bg-gradient rounded-pill mb-2">{{ $data->status }}</div>
+                            @endif
+
                             <h6>{{ $data->tanggal }}</h6>
                             <p class="card-text mb-0 ">{{ $data->nama_kegiatan }}</p>
                         </div>
@@ -40,12 +47,18 @@
                                             <p><strong>Tertarik untuk mengikuti event ini?</strong></p>
                                             <p>Klik tombol di bawah ini dan silakan untuk mengikuti proses pendaftaran
                                                 sesuai ketentuan yang ada!!</p>
-                                            <form action="/kegiatan/daftar/{{ $data->id_kegiatan }}" method="POST">
-                                                @csrf
-                                                <input type="hidden" name="id_kegiatan" value="{{$data->id_kegiatan}}" class="form-control-file mt-1">
-                                                <input type="hidden" name="id_anggota" value="{{auth()->user()->id_anggota}}" class="form-control-file mt-1">
-                                                <button type="submit" class="btn btn-primary">Daftar</button>
-                                            </form>
+                                                @if ($data->status == 'Selesai'or'Closed')
+                                                    <strong>Kegiatan Telah selesai!</strong>
+                                                    @else
+                                                    <form action="/kegiatan/daftar/{{ $data->id_kegiatan }}" method="POST">
+                                                        @csrf
+                                                        <input type="hidden" name="id_kegiatan" value="{{ $data->id_kegiatan }}"
+                                                            class="form-control-file mt-1">
+                                                        <input type="hidden" name="id_anggota"
+                                                            value="{{ auth()->user()->id_anggota }}" class="form-control-file mt-1">
+                                                        <button type="submit" class="btn btn-primary">Daftar</button>
+                                                    </form>
+                                                @endif
                                         </div>
                                     </div><!-- /# card -->
                                 </div>

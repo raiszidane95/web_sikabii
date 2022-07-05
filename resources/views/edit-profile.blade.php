@@ -60,15 +60,6 @@
                                 </div>
                                 <div class="row mb-3">
                                     <div class="col-sm-3">
-                                        <h6 class="mb-0">Password</h6>
-                                    </div>
-                                    <div class="col-sm-8 text-secondary">
-                                        <input type="password" name="password" class="form-control"
-                                            value="{{ auth()->user()->password }}">
-                                    </div>
-                                </div>
-                                <div class="row mb-3">
-                                    <div class="col-sm-3">
                                         <h6 class="mb-0">NPM</h6>
                                     </div>
                                     <div class="col-sm-8 text-secondary">

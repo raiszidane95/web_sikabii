@@ -27,7 +27,7 @@ class DataKegiatanController extends Controller
     public function Usershow($id_kegiatan)
     {
         $data = DataKegiatanModels::all()->find($id_kegiatan);
-        return view('detail-kegiatan', compact('data', 'datarekam'));
+        return view('detail-kegiatan', compact('data'));
     }
 
     public function index()

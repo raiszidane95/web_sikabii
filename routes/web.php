@@ -46,6 +46,8 @@ use Illuminate\Support\Facades\Route;
     Route::get('/profile', [AnggotaController::class, 'index'])->name('profile');
     Route::get('/profile/edit/{id_anggota}', [AnggotaController::class, 'showEdit'])->name('edit');
     Route::post('/profile/edit/update/{id_anggota}', [AnggotaController::class, 'update'])->name('update');
+    Route::get('/profile/password/{id_anggota}', [AnggotaController::class, 'showEditPassword'])->name('editpw');
+    Route::post('/profile/password/change-password/{id_anggota}', [AnggotaController::class, 'updatePassword'])->name('update-password');
     Route::post('/kegiatan/daftar/{id_kegiatan}', [RekamKegiatanController::class, 'store']);
 });
 
