@@ -8,7 +8,7 @@
 
                 <div class="container mt-5 mb-2">
                     <!-- Button trigger modal -->
-                    <button type="button" class="btn btn-primary mb-1" data-toggle="modal" data-target="#largeModal">
+                    <button type="button" class="btn btn-primary rounded mb-1" data-toggle="modal" data-target="#largeModal">
                         Tambah Data
                     </button>
 
@@ -55,7 +55,8 @@
                                                     {{-- Sekertaris Departemen --}}
                                                     <div class="row form-group">
                                                         <div class="col col-md-3"><label for="text-input"
-                                                                class=" form-control-label">Sekertaris Departemen</label></div>
+                                                                class=" form-control-label">Sekertaris Departemen</label>
+                                                        </div>
                                                         <div class="col-12 col-md-9"><input type="text" id="nama"
                                                                 name="sekertaris_departemen" placeholder="Nama"
                                                                 class="form-control">
@@ -71,16 +72,16 @@
                                                                 class="form-control">
                                                                 @foreach ($datakepengurusan as $item)
                                                                     <option value="{{ $item->id_kepengurusan }}">
-                                                                        {{ $item->nama_kepengurusan }}
+                                                                        {{ $item->tahun_kepengurusan }}
                                                                     </option>
                                                                 @endforeach
                                                             </select>
                                                         </div>
                                                     </div>
                                                     <div class="modal-footer">
-                                                        <button type="button" class="btn btn-secondary"
+                                                        <button type="button" class="btn btn-secondary rounded"
                                                             data-dismiss="modal">Cancel</button>
-                                                        <button type="submit" class="btn btn-primary">Confirm</button>
+                                                        <button type="submit" class="btn btn-primary rounded">Confirm</button>
                                                     </div>
                                                 </form>
                                             </div>
@@ -98,7 +99,7 @@
                         <strong class="card-title">Data Departemen Kaderisasi Birohmah</strong>
                     </div>
                     <div class="card-body">
-                        <table class="table">
+                        <table class="table table-striped table-bordered">
                             <tr>
                                 <th>Nama Departemen</th>
                                 <th>Tahun Kepengurusan</th>
@@ -111,12 +112,10 @@
                                             class="text-primary">{{ $post->kepengurusan->tahun_kepengurusan }}</a></td>
                                     <td>
                                         <a href="/admin/departemen/edit/{{ $post->id_departemen }}">
-                                            <button type="button" class="btn btn-warning">
+                                            <button type="button" class="btn rounded btn-sm btn-warning">
                                                 Edit
                                             </button>
                                         </a>
-                                        <button class="btn btn-danger delete" data-nama="{{ $post->nama_departemen }}"
-                                            data-id="{{ $post->id_departemen }}">Delete</button>
                                     </td>
                                 </tr>
                             @endforeach
@@ -126,7 +125,7 @@
             </div>
         </div>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
-                integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous">
+            integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous">
         </script>
     </body>
 

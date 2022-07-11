@@ -12,10 +12,9 @@
                         </script>
                     @endif
                     <!-- Button trigger modal -->
-                    <button type="button" class="btn btn-primary mb-1" data-toggle="modal" data-target="#largeModal">
+                    <button type="button" class="btn btn-primary rounded mb-1" data-toggle="modal" data-target="#largeModal">
                         Tambah Data
                     </button>
-                    <a href="/admin/kegiatan/riwayat-kegiatan" class="btn btn-secondary mb-1"> Riwayat Kegiatan</a>
 
                     <!-- Modal -->
                     <div class="modal fade" id="largeModal" tabindex="-1" role="dialog" aria-labelledby="largeModalLabel"
@@ -41,8 +40,8 @@
                                                     <div class="row form-group">
                                                         <div class="col col-md-3"><label for="text-input"
                                                                 class=" form-control-label">Nama Kegiatan</label></div>
-                                                        <div class="col-12 col-md-9"><input type="text" id="nama_kegiatan"
-                                                                name="nama_kegiatan" placeholder="Nama"
+                                                        <div class="col-12 col-md-9"><input type="text"
+                                                                id="nama_kegiatan" name="nama_kegiatan" placeholder="Nama"
                                                                 class="form-control">
                                                         </div>
                                                     </div>
@@ -87,9 +86,10 @@
                                                                 name="gambar" class="form-control-file"></div>
                                                     </div>
                                                     <div class="modal-footer">
-                                                        <button type="button" class="btn btn-secondary"
+                                                        <button type="button" class="btn btn-secondary rounded"
                                                             data-dismiss="modal">Cancel</button>
-                                                        <button type="submit" class="btn btn-primary">Confirm</button>
+                                                        <button type="submit"
+                                                            class="btn btn-primary rounded">Confirm</button>
                                                     </div>
                                                 </form>
                                             </div>
@@ -107,7 +107,7 @@
                         <strong class="card-title">Data Kegiatan Kaderisasi Birohmah</strong>
                     </div>
                     <div class="card-body">
-                        <table class="table">
+                        <table class="table table-striped table-bordered dataTable no-footer">
                             <tr>
                                 <th>No</th>
                                 <th>Nama Kegiatan</th>
@@ -125,13 +125,11 @@
                                     </td>
                                     <td>
                                         <a href="/admin/kegiatan/edit/{{ $post->id_kegiatan }}">
-                                            <button class="btn btn-warning" onClick="show()">Edit</button>
+                                            <button class="btn btn-warning btn-sm rounded" onClick="show()">Edit</button>
                                         </a>
-                                        <a href="">
-                                            <button class="btn btn-danger delete"
-                                                data-nama="{{ $post->nama_kegiatan }}"
-                                                data-id="{{ $post->id_kegiatan }}">Delete
-                                            </button>
+                                        <a class="delete" data-nama="{{ $post->nama_kegiatan }}"
+                                            data-id="{{ $post->id_kegiatan }}">
+                                            <button class="btn btn-danger btn-sm rounded">Delete</button>
                                         </a>
                                     </td>
                                 </tr>
@@ -148,7 +146,8 @@
                 var nama_kegiatan = $(this).attr('data-nama');
                 swal({
                         title: "Apakah anda yakin?",
-                        text: "Menghapus data " + nama_kegiatan + " tidak dapat dikembalikan selelahnya!",
+                        text: "Menghapus data " + nama_kegiatan +
+                            " akan menghapus Kegiatan yang ada?",
                         icon: "warning",
                         buttons: true,
                         dangerMode: true,
@@ -171,7 +170,7 @@
             </script>
         @endpush
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
-                integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous">
+            integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous">
         </script>
     </body>
 @endsection

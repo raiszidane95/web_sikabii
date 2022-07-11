@@ -7,7 +7,7 @@
                 <h3>Data Kepengurusan</h3>
                 <div class="container mt-5 mb-2">
                     <!-- Button trigger modal -->
-                    <button type="button" class="btn btn-primary mb-1" data-toggle="modal" data-target="#largeModal">
+                    <button type="button" class="btn btn-primary rounded mb-2" data-toggle="modal" data-target="#largeModal">
                         Tambah Data
                     </button>
 
@@ -77,9 +77,10 @@
                                                                 name="logo" class="form-control-file"></div>
                                                     </div>
                                                     <div class="modal-footer">
-                                                        <button type="button" class="btn btn-secondary"
+                                                        <button type="button" class="btn btn-secondary rounded"
                                                             data-dismiss="modal">Cancel</button>
-                                                        <button type="submit" class="btn btn-primary">Confirm</button>
+                                                        <button type="submit"
+                                                            class="btn btn-primary rounded">Confirm</button>
                                                     </div>
                                                 </form>
                                             </div>
@@ -97,7 +98,7 @@
 
                         </div>
                         <div class="card-body">
-                            <table class="table">
+                        <table class="table table-sm` table-striped table-bordered dataTable no-footer">
                                 <tr>
                                     <th>No</th>
                                     <th>Nama Kepengurusan</th>
@@ -110,28 +111,21 @@
                                 @endphp
                                 @foreach ($data as $post)
                                     <tr>
-                                        <td><a
-                                                href="/admin/kepengurusan/{{ $post->id_kepengurusan }}">{{ $id++ }}</a>
-                                        </td>
-                                        <td><a href="/admin/kepengurusan/{{ $post->id_kepengurusan }}">{{ $post->nama_kepengurusan }}
+                                        <td>{{ $id++ }}</td>
+                                        <td>{{ $post->nama_kepengurusan }}</td>
+                                        <td>{{ $post->tahun_kepengurusan }}</td>
+                                        <td class="w-25">
+                                            <a href="/admin/kepengurusan/{{ $post->id_kepengurusan }}">
+                                                <button type="button"
+                                                    class="btn btn-info btn-sm mb-1 rounded">View</button>
                                             </a>
-                                        </td>
-                                        <td>
-                                                <a
-                                                    href="/admin/kepengurusan/{{ $post->id_kepengurusan }}">{{ $post->tahun_kepengurusan }}</a>
-                                        </td>
-                                        <td>
                                             <a href="/admin/kepengurusan/edit/{{ $post->id_kepengurusan }}">
-                                                <button type="button" class="btn btn-warning mb-1" data-toggle="modal"
-                                                    data-target="#EditModal">
-                                                    Edit
-                                                </button>
+                                                <button type="button"
+                                                    class="btn btn-warning btn-sm mb-1 rounded">Edit</button>
                                             </a>
-                                            <a class="delete"
-                                                data-nama="{{ $post->nama_kepengurusan }}"
+                                            <a class="delete" data-nama="{{ $post->nama_kepengurusan }}"
                                                 data-id="{{ $post->id_kepengurusan }}">
-                                                <button type="button" class="btn btn-danger mb-1" data-toggle="modal"
-                                                    data-target="#EditModal">
+                                                <button type="button" class="btn btn-danger btn-sm rounded mb-1">
                                                     Delete
                                                 </button>
                                             </a>
@@ -151,7 +145,8 @@
             var nama_kepengurusan = $(this).attr('data-nama');
             swal({
                     title: "Apakah anda yakin?",
-                    text: "Menghapus data " + nama_kepengurusan + " akan menghapus departemen yang ada di kepengurusan tersebut!",
+                    text: "Menghapus data " + nama_kepengurusan +
+                        " akan menghapus departemen yang ada di kepengurusan tersebut!",
                     icon: "warning",
                     buttons: true,
                     dangerMode: true,

@@ -72,7 +72,7 @@
                                                     @endif
                                                     <input type="file" id="file-input" name="logo"
                                                         class="form-control-file">
-                                                    <input type="hidden" name="oldlogo" value="{{ asset('logokabinet/' . $data->logo) }}" class="form-control-file">
+                                                    {{-- <input type="hidden" name="oldlogo" value="{{ asset('logokabinet/' . $data->logo) }}" class="form-control-file"> --}}
                                                 </div>
                                             </div>
                                             <div class="modal-footer">

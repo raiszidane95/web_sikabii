@@ -3,13 +3,13 @@
 
     <body>
         <div class="container ">
-            <div class="col-2-lg-10">
+            <div class="col-12">
                 <h6>Detail Kader</h6>
 
                 <div class="container mt-4">
                     <div class="main-body">
-                        <div class="row gutters-sm">
-                            <div class="col-md-4 mb-3">
+                        <div class="row">
+                            <div class="col-md-3 mb-3">
                                 <div class="card shadow">
                                     <div class="card-body">
                                         <div class="d-flex flex-column align-items-center text-center">
@@ -41,12 +41,12 @@
                                         <li
                                             class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
                                             <h6 class="mb-0">Nomor Handphone</h6>
-                                            <span class="text-secondary">{{ $data->no_handphone }}</span>
+                                            <span class="text-secondary">0{{ $data->no_handphone }}</span>
                                         </li>
                                     </ul>
                                 </div>
                             </div>
-                            <div class="col-md-8">
+                            <div class="col-md-9">
                                 <div class="card mb-3 shadow">
                                     <div class="card-body">
                                         <div class="row">

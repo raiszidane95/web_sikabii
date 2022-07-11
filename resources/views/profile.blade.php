@@ -23,6 +23,7 @@
                                 @endif
                                 <div class="mt-3">
                                     <h4>{{ auth()->user()->nama }}</h4>
+                                    <p class="text-secondary mb-1">{{ auth()->user()->npm }}</p>
                                     <p class="text-secondary mb-1">{{ auth()->user()->jurusan }}</p>
                                     <p class="text-muted font-size-sm">Fakultas {{ auth()->user()->fakultas }}
                                         {{ auth()->user()->angkatan }}</p>
@@ -113,6 +114,7 @@
                                         @else
                                             <tr>
                                                 <th>Nama Kegiatan</th>
+                                                <th>Tanggal Kegiatan</th>
                                                 <th>Status</th>
                                             </tr>
                                             @php
@@ -124,6 +126,9 @@
                                                 <tr>
                                                     <td>
                                                         {{ $item->nama_kegiatan }}
+                                                    </td>
+                                                    <td>
+                                                        {{ $item->tanggal }}
                                                     </td>
                                                     <td>
                                                         {{ $item->status }}

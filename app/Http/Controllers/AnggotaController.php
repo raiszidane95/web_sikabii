@@ -21,10 +21,11 @@ class AnggotaController extends Controller
     public function dashboard()
     {
         $data = ModelsAnggota::all()->where('role', '=', 2)->count('role');
+        $datakader = ModelsAnggota::paginate(50)->where('role', '=', 2);
         $datadepartemen = Departemen::all()->count('id');
         $datakegiatan = DataKegiatanModels::all()->count('id');
 
-        return view('admin.dashboard', compact('data', 'datadepartemen', 'datakegiatan'));
+        return view('admin.dashboard', compact('data', 'datadepartemen', 'datakegiatan', 'datakader'));
     }
 
     public function indexAdmin()

@@ -42,6 +42,7 @@
     <link rel="stylesheet" href="{{ asset('style/assets/scss/style.css') }}">
     <link href="{{ asset('style/assets/css/lib/vector-map/jqvmap.min.css') }}" rel="stylesheet">
 
+    <link rel="stylesheet" href="{{ asset('style/assets/css/lib/datatable/dataTables.bootstrap.min.css') }}">
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800' rel='stylesheet' type='text/css'>
 
     <!-- <script type="text/javascript" src="https://cdn.jsdelivr.net/html5shiv/3.7.3/html5shiv.min.js"></script> -->
@@ -168,6 +169,23 @@
     <script src="{{ asset('style/assets/js/lib/vector-map/country/jquery.vmap.world.js') }}"></script>
     <script src="{{ asset('assets/ckeditor/ckeditor.js') }}"></script>
     <script src="{{ asset('assets/Datepicker.js/dist/datepicker.js') }}"></script>
+    <script src="{{ asset('assets/js/lib/data-table/datatables.min.js') }}"></script>
+    <script src="{{ asset('assets/js/lib/data-table/dataTables.bootstrap.min.js') }}"></script>
+    <script src="{{ asset('assets/js/lib/data-table/dataTables.buttons.min.js') }}"></script>
+    <script src="{{ asset('assets/js/lib/data-table/buttons.bootstrap.min.js') }}"></script>
+    <script src="{{ asset('assets/js/lib/data-table/jszip.min.js') }}"></script>
+    <script src="{{ asset('assets/js/lib/data-table/pdfmake.min.js') }}"></script>
+    <script src="{{ asset('assets/js/lib/data-table/vfs_fonts.js') }}"></script>
+    <script src="{{ asset('assets/js/lib/data-table/buttons.html5.min.js') }}"></script>
+    <script src="{{ asset('assets/js/lib/data-table/buttons.print.min.js') }}"></script>
+    <script src="{{ asset('assets/js/lib/data-table/buttons.colVis.min.js') }}"></script>
+    <script src="{{ asset('assets/js/lib/data-table/datatables-init.js') }}"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $('#bootstrap-data-table-export').DataTable();
+        });
+    </script>
     <script type="text/javascript">
         $('.datepicker').datepicker({
             format: 'yyyy-mm-dd'

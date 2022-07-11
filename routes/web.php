@@ -39,6 +39,9 @@ use Illuminate\Support\Facades\Route;
 
     //kegiatan
     Route::get('/kegiatan', [DataKegiatanController::class, 'Userindex']);
+    Route::get('/kepengurusan', [DataKepengurusanController::class, 'Guestindex']);
+    Route::get('/kepengurusan/{id_kepengurusan}', [DataKepengurusanController::class, 'Guestshow']);
+    Route::get('/departemen/{id_departemen}', [DataKepengurusanController::class, 'departemenShow']);
 
     //Route User
     Route::group(['middleware' => ['auth', 'hakakses:2']], function () {

@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <meta name="description" content="" />
     <meta name="author" content="" />
-    <title>Web Kaderisasi Birohmah</title>
+    <title>Kaderisasi Birohmah | Unila</title>
 
     <!-- Favicon-->
     <link rel="icon" href="{{ asset('assets/Logo-BIROHMAH.png') }}">
@@ -40,6 +40,7 @@
                 <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                     <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
                     <li class="nav-item"><a class="nav-link" href="/kegiatan">Kegiatan</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/kepengurusan">Kepengurusan</a></li>
                     <li class="nav-item"><a class="nav-link" href="/about">About</a></li>
                     @auth
                         <li class="nav-item dropdown">

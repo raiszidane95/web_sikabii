@@ -47,8 +47,10 @@
                                             <p><strong>Tertarik untuk mengikuti event ini?</strong></p>
                                             <p>Klik tombol di bawah ini dan silakan untuk mengikuti proses pendaftaran
                                                 sesuai ketentuan yang ada!!</p>
-                                                @if ($data->status == 'Selesai'or'Closed')
-                                                    <strong>Kegiatan Telah selesai!</strong>
+                                                @if ($data->status == 'Selesai')
+                                                    <strong>Kegiatan telah selesai!</strong>
+                                                    @elseif ($data->status == 'Closed')
+                                                    <strong>Pendaftaran sudah ditutup!</strong>
                                                     @else
                                                     <form action="/kegiatan/daftar/{{ $data->id_kegiatan }}" method="POST">
                                                         @csrf

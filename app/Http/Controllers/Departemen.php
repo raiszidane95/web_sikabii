@@ -22,7 +22,6 @@ class Departemen extends Controller
         return view('admin.departemen.Edit-data-departemen', compact('data', 'datakepengurusan'));
     }
 
-
     public function store(Request $request)
     {
         ModelsDepartemen::create($request->all());
