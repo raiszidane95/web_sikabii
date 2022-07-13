@@ -53,9 +53,9 @@
                         </div>
 
                         <div class="col-lg-6">
-                            <div class="container ml-4 mt-3">
+                            <div class="mt-3 mb-1">
                                 <a href="/admin/kegiatan/riwayat-kegiatan/{{ $data->id_kegiatan }}"
-                                    class="btn btn-success mb-1"> Export Riwayat Kegiatan</a>
+                                    class="btn btn-success mb-1 rounded"> Export Riwayat Kegiatan</a>
                             </div>
                         </div>
                         <div class="container mt-3">

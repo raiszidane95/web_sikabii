@@ -114,7 +114,7 @@
                                 <tr role="row">
                                     <th class="sorting_asc" tabindex="0" aria-controls="bootstrap-data-table"
                                         rowspan="1" colspan="1" aria-sort="ascending"
-                                        aria-label="Name: activate to sort column descending" style="width: 121px;">No</th>
+                                        aria-label="Name: activate to sort column descending" style="width:7%;">No</th>
                                     <th class="sorting" tabindex="0" aria-controls="bootstrap-data-table"
                                         rowspan="1" colspan="1"
                                         aria-label="Position: activate to sort column ascending" style="width: 210px;">
@@ -130,12 +130,12 @@
                             @endphp
                             @foreach ($data as $post)
                                 <tr>
-                                    <td><a href="/admin/kegiatan/{{ $post->id_kegiatan }}">{{ $id++ }}</a>
-                                    </td>
-                                    <td><a
-                                            href="/admin/kegiatan/{{ $post->id_kegiatan }}">{{ $post->nama_kegiatan }}</a>
-                                    </td>
+                                    <td>{{ $id++ }}</td>
+                                    <td>{{ $post->nama_kegiatan }}</td>
                                     <td>
+                                        <a href="/admin/kegiatan/{{ $post->id_kegiatan }}">
+                                            <button class="btn btn-info btn-sm rounded" onClick="show()">Detail</button>
+                                        </a>
                                         <a href="/admin/kegiatan/edit/{{ $post->id_kegiatan }}">
                                             <button class="btn btn-warning btn-sm rounded" onClick="show()">Edit</button>
                                         </a>
