@@ -5,6 +5,7 @@
 @endsection
 
 @section('content')
+
     <div class="container mt-4">
         <div class="main-body">
             <div class="row gutters-sm">
@@ -99,7 +100,8 @@
                                         <h6 class="mb-0">Departemen</h6>
                                     </div>
                                     <div class="col-sm-8 text-secondary">
-                                        <select name="id_departemen" class="form-select"
+
+                                        <select name="id_departemen" class="form-select select2"
                                             aria-label="Default select example">
                                             <option value="{{ auth()->user()->id_departemen }}" selected>
                                                 {{ auth()->user()->departemen->nama_departemen }},
@@ -121,8 +123,8 @@
                                         <div class="input-group">
                                             <input name="tempat_lahir" type="text" aria-label="Tempat lahir"
                                                 value="{{ auth()->user()->tempat_lahir }}" class="form-control">
-                                            <input type="text" id="datepicker" name="tanggal_lahir"
-                                                placeholder="Tanggal" value="{{ auth()->user()->tanggal_lahir }}"
+                                            <input type="text" id="datepicker" name="tanggal_lahir" placeholder="Tanggal"
+                                                value="{{ auth()->user()->tanggal_lahir }}"
                                                 class=" datepicker form-control">
                                         </div>
                                     </div>
@@ -177,4 +179,10 @@
             </div>
         </div>
     </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('.select2').select2();
+        });
+    </script>
 @endsection

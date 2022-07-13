@@ -8,7 +8,11 @@
     <meta name="author" content="" />
     <title>Kaderisasi Birohmah | Unila</title>
 
+
+    <link href="{{ asset('assets/select2-4.0.13/dist/css/select2.min.css') }}" rel="stylesheet" />
     <!-- Favicon-->
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
     <link rel="icon" href="{{ asset('assets/Logo-BIROHMAH.png') }}">
 
     <!-- Bootstrap icons-->
@@ -20,6 +24,9 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.5.0/css/bootstrap-datepicker.css"
         rel="stylesheet">
     <link rel="stylesheet" href="{{ asset('assets/Datepicker.js/dist/css/datepicker.material.css') }}">
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.10/css/select2.min.css" rel="stylesheet" />
+
     <script src="{{ asset('assets/Datepicker.js/dist/datepicker.js') }}"></script>
 </head>
 
@@ -101,8 +108,8 @@
 
                     <ul class="fa-ul" style="margin-left: 1.65em;">
                         <li class="mb-3">
-                            <span class="fa-li"><i class="fas fa-envelope"></i></span><span
-                                class="ms-2">+62 858-3256-9726</span>
+                            <span class="fa-li"><i class="fas fa-envelope"></i></span><span class="ms-2">+62
+                                858-3256-9726</span>
                         </li>
                         <li class="mb-3">
                             <span class="fa-li"><i class="fas fa-home"></i></span><span
@@ -134,13 +141,17 @@
         </div>
     </footer>
 </body>
-
-<script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.10/js/select2.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+<script src="https://code.jquery.com/jquery-2.2.4.js" integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI="
+    crossorigin="anonymous"></script>
 <!-- Bootstrap core JS-->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
 <!-- Core theme JS-->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.5.0/js/bootstrap-datepicker.js"></script>
 <script src="{{ asset('js/scripts.js') }}"></script>
+<script src="{{ asset('assets/select2-4.0.13/dist/js/select2.min.js') }}"></script>
 <script type="text/javascript">
     $('.datepicker').datepicker({
         format: 'yyyy-mm-dd'
