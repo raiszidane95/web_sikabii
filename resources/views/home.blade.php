@@ -7,6 +7,7 @@
         <div class="my-5 text-center">
             <h1 class="display-6 fw-bolder text-black mb-2">Website Kaderisasi Birohmah<br>Universitas Lampung
             </h1>
+            <h1> Test GIT PULL</h1>
         </div>
 
         <!-- Carousel-->
