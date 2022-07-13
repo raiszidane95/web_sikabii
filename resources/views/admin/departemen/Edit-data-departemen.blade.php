@@ -22,8 +22,9 @@
                                                 <div class="col col-md-3"><label for="text-input"
                                                         class=" form-control-label">Nama Departemen</label></div>
                                                 <div class="col-12 col-md-9">
-                                                    <input type="text" id="nama" value="{{ $data->nama_departemen }}"
-                                                        name="nama_departemen" placeholder="Nama" class="form-control">
+                                                    <input type="text" id="nama"
+                                                        value="{{ $data->nama_departemen }}" name="nama_departemen"
+                                                        placeholder="Nama" class="form-control">
                                                 </div>
                                             </div>
 
@@ -35,20 +36,43 @@
                                                 <div class="col-12 col-md-9">
                                                     <select name="id_kepengurusan" id="status" class="form-control">
                                                         <option value="{{ $data->kepengurusan->id_kepengurusan }}">
-                                                            Selected {{ $data->kepengurusan->nama_kepengurusan }}
+                                                            Selected {{ $data->kepengurusan->tahun_kepengurusan }}
                                                         </option>
                                                         @foreach ($datakepengurusan as $item)
                                                             <option value="{{ $item->id_kepengurusan }}">
-                                                                {{ $item->nama_kepengurusan }}</option>
+                                                                {{ $item->tahun_kepengurusan }}</option>
                                                         @endforeach
                                                     </select>
+                                                </div>
+                                            </div>
+
+                                            {{-- Kepala & Sekertaris Departemen --}}
+                                            <div class="row form-group">
+                                                <div class="col col-md-3"><label for="text-input"
+                                                        class=" form-control-label">Kepala Departemen</label></div>
+                                                <div class="col-12 col-md-9">
+                                                    <input type="text" id="nama"
+                                                        value="{{ $data->kepala_departemen }}" name="kepala_departemen"
+                                                        placeholder="Nama" class="form-control">
+                                                </div>
+                                            </div>
+                                            <div class="row form-group">
+                                                <div class="col col-md-3"><label for="text-input"
+                                                        class=" form-control-label">Sekertaris Departemen</label></div>
+                                                <div class="col-12 col-md-9">
+                                                    <input type="text" id="nama"
+                                                        value="{{ $data->sekertaris_departemen }}"
+                                                        name="sekertaris_departemen" placeholder="Nama"
+                                                        class="form-control">
                                                 </div>
                                             </div>
 
                                     </div>
 
                                     <div class="modal-footer">
-                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                                        <a href="/admin/departemen">
+                                            <button type="button" class="btn btn-secondary"
+                                                data-dismiss="modal">Cancel</button></a>
                                         <button type="submit" class="btn btn-primary">Confirm</button>
                                     </div>
                                     </form>

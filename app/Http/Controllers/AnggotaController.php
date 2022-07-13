@@ -97,7 +97,28 @@ class AnggotaController extends Controller
         $data->update($request->only('password'));
 
         return back()->with("status", "Password changed successfully!");
-}
+    }
+
+    public function showResetPassword($id_anggota)
+    {
+        $data = ModelsAnggota::all()->find($id_anggota);
+        return view('admin.reset-password', compact('data'));
+    }
+
+    public function resetPassword(Request $request, $id_anggota)
+    {
+        $data = ModelsAnggota::all()->find($id_anggota);
+
+        $request->validate([
+            'password' => 'required|min:6'
+        ]);
+
+        #Update the new Password
+        $request['password'] = Hash::make($request['password']);
+        $data->update($request->only('password'));
+
+        return back()->with("status", "Password changed successfully!");
+    }
 
     public function export()
     {

@@ -77,6 +77,15 @@
                             <hr>
                             <div class="row">
                                 <div class="col-sm-3">
+                                    <h6 class="mb-0">Kepengurusan</h6>
+                                </div>
+                                <div class="col-sm-9 text-secondary">
+                                    {{ auth()->user()->departemen->kepengurusan->tahun_kepengurusan }}
+                                </div>
+                            </div>
+                            <hr>
+                            <div class="row">
+                                <div class="col-sm-3">
                                     <h6 class="mb-0">Jenis Kelamin</h6>
                                 </div>
                                 <div class="col-sm-9 text-secondary">

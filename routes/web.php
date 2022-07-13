@@ -57,12 +57,14 @@ use Illuminate\Support\Facades\Route;
 // Route Admin
 Route::group(['middleware' => ['auth', 'hakakses:1']], function () {
     // Kepengurusan
+    Route::get('/admin/data-kader/show-password/{id_anggota}', [AnggotaController::class, 'showResetPassword'])->name('editpw');
+    Route::post('/admin/data-kader/reset-password/{id_anggota}', [AnggotaController::class, 'resetPassword'])->name('update-password');
     Route::get('/admin/kepengurusan', [DataKepengurusanController::class, 'index'])->name('data-kepengurusan');
     Route::get('/admin/kepengurusan/{id_kepengurusan}', [DataKepengurusanController::class, 'show'])->name('show');
     Route::get('/admin/kepengurusan/edit/{id_kepengurusan}', [DataKepengurusanController::class, 'Editshow'])->name('Editshow');
     Route::post('/admin/kepengurusan/store', [DataKepengurusanController::class, 'store'])->name('store');
     Route::post('/admin/kepengurusan/update/{id_kepengurusan}', [DataKepengurusanController::class, 'update'])->name('update');
-    Route::get('/admin/kepengurusan/delete/{id_kepengurusan}', [DataKepengurusanController::class, 'destroy'])->name('destroy');
+    // Route::get('/admin/kepengurusan/delete/{id_kepengurusan}', [DataKepengurusanController::class, 'destroy'])->name('destroy');
 
     // Kegiatan
     Route::get('/admin/kegiatan', [DataKegiatanController::class, 'index'])->name('data-kegiatan');
@@ -78,7 +80,7 @@ Route::group(['middleware' => ['auth', 'hakakses:1']], function () {
     Route::post('/admin/departemen/store', [Departemen::class, 'store'])->name('store');
     Route::get('/admin/departemen/edit/{id_departemen}', [Departemen::class, 'show'])->name('edit-departemen');
     Route::post('/admin/departemen/update/{id_departemen}', [Departemen::class, 'update'])->name('update');
-    Route::get('/admin/departemen/delete/{id_departemen}', [Departemen::class, 'destroy'])->name('destroy');
+    // Route::get('/admin/departemen/delete/{id_departemen}', [Departemen::class, 'destroy'])->name('destroy');
 
     Route::get('/admin', [AnggotaController::class, 'dashboard'])->name('admin');
 

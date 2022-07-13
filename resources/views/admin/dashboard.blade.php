@@ -87,7 +87,7 @@
                                                                 aria-controls="bootstrap-data-table" rowspan="1"
                                                                 colspan="1" aria-sort="ascending"
                                                                 aria-label="Name: activate to sort column descending"
-                                                                style="width: 121px;">Name</th>
+                                                                style="width: 121px;">Nama</th>
                                                             <th class="sorting" tabindex="0"
                                                                 aria-controls="bootstrap-data-table" rowspan="1"
                                                                 colspan="1"

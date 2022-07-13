@@ -20,8 +20,11 @@
                                 <div class="col-md-8 px-3 position-relative">
                                     <div class="card-block px-3 py-3">
                                         <h4 class="card-title">{{ $item->nama_kepengurusan }}</h4>
-                                        <p class="card-text">Visi: {!! Str::limit($item->visi, '50') !!}</p>
-                                        <p class="card-text">Misi: {!! Str::limit($item->misi, '50') !!}</p>
+                                        <strong class="card-title">{{ $item->tahun_kepengurusan }}</strong>
+                                        <br>
+                                        <br>
+                                        <p class="card-text">Visi: <br> {!! Str::limit($item->visi, '50') !!}</p>
+                                        <p class="card-text">Misi: <br> {!! Str::limit($item->misi, '50') !!}</p>
                                         <br><br>
                                         <a href="/kepengurusan/{{ $item->id_kepengurusan }}" class="btn btn-primary">Selengkapnya</a>
                                     </div>

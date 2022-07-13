@@ -107,12 +107,24 @@
                         <strong class="card-title">Data Kegiatan Kaderisasi Birohmah</strong>
                     </div>
                     <div class="card-body">
-                        <table class="table table-striped table-bordered dataTable no-footer">
-                            <tr>
-                                <th>No</th>
-                                <th>Nama Kegiatan</th>
-                                <th>Action</th>
-                            </tr>
+                        <table id="bootstrap-data-table"
+                            class="table table-sm table-striped table-bordered dataTable no-footer" role="grid"
+                            aria-describedby="bootstrap-data-table_info">
+                            <thead>
+                                <tr role="row">
+                                    <th class="sorting_asc" tabindex="0" aria-controls="bootstrap-data-table"
+                                        rowspan="1" colspan="1" aria-sort="ascending"
+                                        aria-label="Name: activate to sort column descending" style="width: 121px;">No</th>
+                                    <th class="sorting" tabindex="0" aria-controls="bootstrap-data-table"
+                                        rowspan="1" colspan="1"
+                                        aria-label="Position: activate to sort column ascending" style="width: 210px;">
+                                        Nama</th>
+                                    <th class="sorting" tabindex="0" aria-controls="bootstrap-data-table"
+                                        rowspan="1" colspan="1"
+                                        aria-label="Office: activate to sort column ascending" style="width: 84px;">Action
+                                    </th>
+                                </tr>
+                            </thead>
                             @php
                                 $id = 1;
                             @endphp

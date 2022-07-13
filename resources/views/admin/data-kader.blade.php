@@ -25,7 +25,7 @@
                                                             aria-controls="bootstrap-data-table" rowspan="1"
                                                             colspan="1" aria-sort="ascending"
                                                             aria-label="Name: activate to sort column descending"
-                                                            style="width: 121px;">Name</th>
+                                                            style="width: 121px;">Nama</th>
                                                         <th class="sorting" tabindex="0"
                                                             aria-controls="bootstrap-data-table" rowspan="1"
                                                             colspan="1"
@@ -55,8 +55,12 @@
                                                                 <td>{{ $item->departemen->kepengurusan->tahun_kepengurusan }}
                                                                 </td>
                                                             @endif
-                                                            <td><a href="/admin/data-kader/{{ $item->id_anggota }}"><button class="btn btn-warning btn-sm rounded" ><i
-                                                                class="fa fa-eye"></i></button></a>
+                                                            <td><a href="/admin/data-kader/{{ $item->id_anggota }}"><button
+                                                                        class="btn btn-warning btn-sm rounded"><i
+                                                                            class="fa fa-eye"></i></button></a>
+                                                                <a
+                                                                    href="/admin/data-kader/show-password/{{ $item->id_anggota }}"><button
+                                                                        class="btn btn-info btn-sm rounded"><i class="bi bi-pencil-square"></i> Reset Password</button></a>
                                                             </td>
                                                         </tr>
                                                     @endforeach

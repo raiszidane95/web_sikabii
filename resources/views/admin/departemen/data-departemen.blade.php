@@ -81,7 +81,8 @@
                                                     <div class="modal-footer">
                                                         <button type="button" class="btn btn-secondary rounded"
                                                             data-dismiss="modal">Cancel</button>
-                                                        <button type="submit" class="btn btn-primary rounded">Confirm</button>
+                                                        <button type="submit"
+                                                            class="btn btn-primary rounded">Confirm</button>
                                                     </div>
                                                 </form>
                                             </div>
@@ -99,26 +100,40 @@
                         <strong class="card-title">Data Departemen Kaderisasi Birohmah</strong>
                     </div>
                     <div class="card-body">
-                        <table class="table table-striped table-bordered">
-                            <tr>
-                                <th>Nama Departemen</th>
-                                <th>Tahun Kepengurusan</th>
-                                <th>Action</th>
-                            </tr>
-                            @foreach ($datadepartemen as $post)
-                                <tr>
-                                    <td>{{ $post->nama_departemen }}</td>
-                                    <td><a href="/admin/kepengurusan/{{ $post->kepengurusan->id_kepengurusan }}"
-                                            class="text-primary">{{ $post->kepengurusan->tahun_kepengurusan }}</a></td>
-                                    <td>
-                                        <a href="/admin/departemen/edit/{{ $post->id_departemen }}">
-                                            <button type="button" class="btn rounded btn-sm btn-warning">
-                                                Edit
-                                            </button>
-                                        </a>
-                                    </td>
+
+                        <table id="bootstrap-data-table"
+                            class="table table-sm table-striped table-bordered dataTable no-footer" role="grid"
+                            aria-describedby="bootstrap-data-table_info">
+                            <thead>
+                                <tr role="row">
+                                    <th class="sorting_asc" tabindex="0" aria-controls="bootstrap-data-table"
+                                        rowspan="1" colspan="1" aria-sort="ascending"
+                                        aria-label="Name: activate to sort column descending" style="width: 121px;">Nama
+                                        Departemen</th>
+                                    <th class="sorting" tabindex="0" aria-controls="bootstrap-data-table" rowspan="1"
+                                        colspan="1" aria-label="Position: activate to sort column ascending"
+                                        style="width: 210px;">Tahun Kepengurusan</th>
+                                    <th class="sorting" tabindex="0" aria-controls="bootstrap-data-table"
+                                        rowspan="1" colspan="1"
+                                        aria-label="Office: activate to sort column ascending" style="width: 84px;">Action
+                                    </th>
                                 </tr>
-                            @endforeach
+                            </thead>
+                            <tbody>
+                                @foreach ($datadepartemen as $item)
+                                    <tr role="row" class="odd">
+                                        <td>{{ $item->nama_departemen }}</td>
+                                        <td><a href="/admin/kepengurusan/{{ $item->kepengurusan->id_kepengurusan }}"
+                                                class="text-primary">{{ $item->kepengurusan->tahun_kepengurusan }}</a>
+                                        </td>
+                                        <td>
+                                            <a href="/admin/departemen/edit/{{ $item->id_departemen }}"><button
+                                                    class="btn btn-info btn-sm rounded"><i
+                                                        class="bi bi-pencil-square"></i>Edit</button></a>
+                                        </td>
+                                    </tr>
+                                @endforeach
+                            </tbody>
                         </table>
                     </div>
                 </div>

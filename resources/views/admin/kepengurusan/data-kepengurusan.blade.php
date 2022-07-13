@@ -98,13 +98,27 @@
 
                         </div>
                         <div class="card-body">
-                        <table class="table table-sm` table-striped table-bordered dataTable no-footer">
-                                <tr>
-                                    <th>No</th>
-                                    <th>Nama Kepengurusan</th>
-                                    <th>Tahun</th>
-                                    <th>Action</th>
-                                </tr>
+                            <table id="bootstrap-data-table"
+                                class="table table-sm table-striped table-bordered dataTable no-footer" role="grid"
+                                aria-describedby="bootstrap-data-table_info">
+                                <thead>
+                                    <tr role="row">
+                                        <th class="sorting_asc" tabindex="0" aria-controls="bootstrap-data-table"
+                                            rowspan="1" colspan="1" aria-sort="ascending"
+                                            aria-label="Name: activate to sort column descending" style="width: 25px;">No</th>
+                                        <th class="sorting" tabindex="0" aria-controls="bootstrap-data-table" rowspan="1"
+                                            colspan="1" aria-label="Position: activate to sort column ascending"
+                                            style="width: 210px;">Nama</th>
+                                        <th class="sorting" tabindex="0" aria-controls="bootstrap-data-table"
+                                            rowspan="1" colspan="1"
+                                            aria-label="Office: activate to sort column ascending" style="width: 121px;">Tahun Kepengurusan
+                                        </th>
+                                        <th class="sorting" tabindex="0" aria-controls="bootstrap-data-table"
+                                            rowspan="1" colspan="1"
+                                            aria-label="Office: activate to sort column ascending" style="width: 84px;">Action
+                                        </th>
+                                    </tr>
+                                </thead>
 
                                 @php
                                     $id = 1;
@@ -122,12 +136,6 @@
                                             <a href="/admin/kepengurusan/edit/{{ $post->id_kepengurusan }}">
                                                 <button type="button"
                                                     class="btn btn-warning btn-sm mb-1 rounded">Edit</button>
-                                            </a>
-                                            <a class="delete" data-nama="{{ $post->nama_kepengurusan }}"
-                                                data-id="{{ $post->id_kepengurusan }}">
-                                                <button type="button" class="btn btn-danger btn-sm rounded mb-1">
-                                                    Delete
-                                                </button>
                                             </a>
                                         </td>
                                     </tr>
