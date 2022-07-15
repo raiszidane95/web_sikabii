@@ -76,9 +76,9 @@
                                                 </div>
                                             </div>
                                             <div class="modal-footer">
-                                                <button type="button" class="btn btn-secondary"
-                                                    data-dismiss="modal">Cancel</button>
-                                                <button type="submit" class="btn btn-primary">Confirm</button>
+                                                <a href="/admin/kepengurusan"><button type="button" class="btn btn-secondary rounded"
+                                                    data-dismiss="modal">Kembali</button></a>
+                                                <button type="submit" class="btn btn-primary rounded">Simpan</button>
                                             </div>
                                         </form>
                                     </div>

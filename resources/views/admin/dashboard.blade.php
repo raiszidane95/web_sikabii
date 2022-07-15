@@ -21,7 +21,7 @@
                     <a href="/admin/data-kader">
                         <div class="card-body pb-0">
                             <h1 class="mb-0">
-                                <span class="text-light count">{{ $data }}</span>
+                                <span class="text-light count">{{ $Countdatakader }}</span>
                             </h1>
                             <strong>
                                 <p class="text-light">Jumlah Kader</p>
@@ -37,7 +37,7 @@
                     <a href="/admin/kegiatan">
                         <div class="card-body pb-0">
                             <h1 class="mb-0">
-                                <span class="text-light count">{{ $datakegiatan }}</span>
+                                <span class="text-light count">{{ $Countkegiatan }}</span>
                             </h1>
                             <strong>
                                 <p class="text-light">Jumlah Kegiatan</p>
@@ -53,7 +53,7 @@
                     <a href="/admin/departemen">
                         <div class="card-body pb-0">
                             <h1 class="mb-0">
-                                <span class="text-light count">{{ $datadepartemen }}</span>
+                                <span class="text-light count">{{ $Countdepartemen }}</span>
                             </h1>
                             <strong>
                                 <p class="text-light">Departemen</p>

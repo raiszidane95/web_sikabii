@@ -79,9 +79,8 @@
                                                 </div>
                                             </div>
                                             <div class="modal-footer">
-                                                <button type="button" class="btn btn-secondary"
-                                                    data-dismiss="modal">Cancel</button>
-                                                <button type="submit" class="btn btn-primary">Confirm</button>
+                                                <a href="/admin/kegiatan" class="btn btn-secondary rounded">Batal</a>
+                                                <button type="submit" class="btn btn-primary rounded">Simpan</button>
                                             </div>
                                         </form>
                                     </div>

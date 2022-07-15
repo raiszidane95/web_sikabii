@@ -78,9 +78,9 @@
                                                     </div>
                                                     <div class="modal-footer">
                                                         <button type="button" class="btn btn-secondary rounded"
-                                                            data-dismiss="modal">Cancel</button>
+                                                            data-dismiss="modal">Batal</button>
                                                         <button type="submit"
-                                                            class="btn btn-primary rounded">Confirm</button>
+                                                            class="btn btn-primary rounded">Simpan</button>
                                                     </div>
                                                 </form>
                                             </div>
