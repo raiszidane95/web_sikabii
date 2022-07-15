@@ -64,11 +64,21 @@
                                     </form>
 
                                 </li>
+                            </ul>
                         </li>
                     @else
-                        <li class="nav-item"><a class="nav-link" href="/login">Login</a></li>
-
-                    @endauth
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button"
+                                aria-expanded="false">Login</a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="/login">
+                                        Login</a></li>
+                                <li><a class="dropdown-item" href="/register">
+                                        Daftar</a></li>
+                        </li>
+                    </ul>
+                    </li>
+                @endauth
                 </ul>
             </div>
         </div>
