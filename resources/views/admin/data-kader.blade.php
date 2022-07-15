@@ -12,6 +12,11 @@
                                 <strong class="card-title">Data Kader</strong>
                             </div>
                             <div class="card-body">
+                                <div class="row">
+                                    <div class="col-sm-12 ml-4 my-2">
+                                        <a href="/admin/data-kader/export" class="btn btn-success">Cetak Data Kader</a>
+                                    </div>
+                                </div>
                                 <div id="bootstrap-data-table_wrapper"
                                     class="dataTables_wrapper container-fluid dt-bootstrap4 no-footer">
                                     <div class="row">
@@ -60,7 +65,9 @@
                                                                             class="fa fa-eye"></i></button></a>
                                                                 <a
                                                                     href="/admin/data-kader/show-password/{{ $item->id_anggota }}"><button
-                                                                        class="btn btn-info btn-sm rounded"><i class="bi bi-pencil-square"></i> Reset Password</button></a>
+                                                                        class="btn btn-info btn-sm rounded"><i
+                                                                            class="bi bi-pencil-square"></i> Reset
+                                                                        Password</button></a>
                                                             </td>
                                                         </tr>
                                                     @endforeach
