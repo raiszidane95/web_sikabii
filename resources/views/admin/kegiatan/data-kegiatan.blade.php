@@ -1,7 +1,6 @@
 @extends('admin.layout.main')
 @section('content')
 
-    <body>
         <div class="container ">
             <div class="col-lg-10">
                 <h3>Data Kegiatan</h3>
@@ -51,7 +50,7 @@
                                                     <div class="row form-group">
                                                         <div class="col col-md-3"><label for="email-input"
                                                                 class=" form-control-label">Tanggal Kegiatan</label></div>
-                                                        <div class="col-12 col-md-9"><input type="text" id="datepicker"
+                                                        <div class="col-12 col-md-9"><input type="date" id="datepicker"
                                                                 name="tanggal" placeholder="Tanggal"
                                                                 class="datepicker form-control">
                                                         </div>
@@ -184,5 +183,4 @@
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
             integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous">
         </script>
-    </body>
-@endsection
+    @endsection
